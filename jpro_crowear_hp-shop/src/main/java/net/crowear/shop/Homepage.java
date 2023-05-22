@@ -10,8 +10,6 @@ import com.google.inject.Module;
 import de.saxsys.mvvmfx.FluentViewLoader;
 import de.saxsys.mvvmfx.ViewTuple;
 import de.saxsys.mvvmfx.guice.MvvmfxGuiceApplication;
-import javafx.scene.Scene;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import net.crowear.shop.module.DataSourceModule;
 import net.crowear.shop.module.EventBusModule;
@@ -27,16 +25,29 @@ import net.crowear.shop.ui.page.memberarea.MemberAreaPageView;
 import net.crowear.shop.ui.page.memberarea.MemberAreaPageViewModel;
 import net.crowear.shop.ui.util.DialogHelper;
 import one.jpro.routing.Route;
-import one.jpro.routing.RouteNode;
 import one.jpro.routing.RouteUtils;
 
-public class Homepage extends MvvmfxGuiceApplication {
+public class Homepage extends MvvmfxGuiceApplication implements RouteApp {
 
    private static final Logger LOG = LogManager.getLogger(Homepage.class);
 
    public static void main(final String[] args) {
       LOG.debug("Starting App");
       launch(args);
+   }
+
+   public Route createRoute(Stage stage) {
+      final ViewTuple<IndexPageView, IndexPageViewModel> indexPageViewTuple = FluentViewLoader
+            .fxmlView(IndexPageView.class).load();
+      indexPageViewTuple.getCodeBehind().setContent(indexPageViewTuple.getView());
+
+      final ViewTuple<MemberAreaPageView, MemberAreaPageViewModel> memberAreaPageViewTuple = FluentViewLoader
+            .fxmlView(MemberAreaPageView.class).load();
+      memberAreaPageViewTuple.getCodeBehind().setContent(memberAreaPageViewTuple.getView());
+
+      return Route.empty().and(RouteUtils.redirect("/", "/crowearindex"))
+            .and(RouteUtils.get("/crowearindex", (s) -> indexPageViewTuple.getCodeBehind()))
+            .and(RouteUtils.get("/memberarea", (s) -> memberAreaPageViewTuple.getCodeBehind()));
    }
 
    @Override
@@ -52,20 +63,7 @@ public class Homepage extends MvvmfxGuiceApplication {
    @Override
    public void startMvvmfx(final Stage stage) throws Exception {
       try {
-         final RouteNode routeNode = new RouteNode(stage);
-
-         final StackPane root = new StackPane(routeNode);
-
-         final Scene scene = new Scene(root);
-         scene.getStylesheets().add("css-homepage.css");
-
-         stage.setTitle("crowear webshopapplication");
-         stage.setScene(scene);
-         stage.sizeToScene();
-         stage.centerOnScreen();
-         routeNode.setRoute(createRoute(stage));
-         stage.show();
-//         routeNode.start(SessionManager.getDefault(routeNode, stage));
+         startRoute(stage);
       } catch (final Exception e) {
          final ViewTuple<ErrorDialogView, ErrorDialogViewModel> viewTuple = FluentViewLoader
                .fxmlView(ErrorDialogView.class).load();
@@ -75,20 +73,6 @@ public class Homepage extends MvvmfxGuiceApplication {
          viewTuple.getViewModel().setDialogStage(dialogStage);
          e.printStackTrace();
       }
-   }
-
-   private Route createRoute(Stage stage) {
-      final ViewTuple<IndexPageView, IndexPageViewModel> indexPageViewTuple = FluentViewLoader
-            .fxmlView(IndexPageView.class).load();
-      indexPageViewTuple.getCodeBehind().setContent(indexPageViewTuple.getView());
-
-      final ViewTuple<MemberAreaPageView, MemberAreaPageViewModel> memberAreaPageViewTuple = FluentViewLoader
-            .fxmlView(MemberAreaPageView.class).load();
-      memberAreaPageViewTuple.getCodeBehind().setContent(memberAreaPageViewTuple.getView());
-
-      return Route.empty().and(RouteUtils.redirect("/", "/crowearindex"))
-            .and(RouteUtils.get("/crowearindex", (s) -> indexPageViewTuple.getCodeBehind()))
-            .and(RouteUtils.get("/memberarea", (s) -> memberAreaPageViewTuple.getCodeBehind()));
    }
 
 }

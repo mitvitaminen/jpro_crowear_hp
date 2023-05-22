@@ -13,6 +13,7 @@ module net.crowear.shop {
    requires javafx.graphics;
    requires javafx.fxml;
    requires one.jpro.routing.core;
+   requires jpro.webapi;
    requires org.apache.logging.log4j;
    requires shiro.core;
    requires shiro.guice;
