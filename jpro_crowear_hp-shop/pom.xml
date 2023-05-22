@@ -98,7 +98,7 @@
 			<scope>compile</scope>
 		</dependency>
 		<dependency>
-			<groupId>one.jpro</groupId>
+			<groupId>com.sandec.jpro</groupId>
 			<artifactId>jpro-webapi</artifactId>
 			<version>${jpro.version}</version>
 			<scope>compile</scope>
