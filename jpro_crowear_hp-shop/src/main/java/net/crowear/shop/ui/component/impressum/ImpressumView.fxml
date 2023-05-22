@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HBox>
+
+<?import javafx.scene.control.Label?>
+
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<HBox xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="net.crowear.shop.ui.component.impressum.ImpressumView"
+	alignment="TOP_CENTER">
+	<VBox alignment="CENTER">
+		<Label text="${controller.lang.label.impressum.label}"
+			wrapText="true" />
+		<Label text="${controller.lang.label.impressum.potpourri}"
+			styleClass="font_0_55em" wrapText="true" />			
+		<Label text="${controller.lang.label.impressum.vertreter}"
+			styleClass="font_0_55em" wrapText="true" />
+		<Label text="${controller.lang.label.impressum.anschrift}"
+			styleClass="font_0_55em" wrapText="true" />
+		<Label text="${controller.lang.label.impressum.kontakt}"
+			styleClass="font_0_55em" wrapText="true" />
+	</VBox>
+</HBox>

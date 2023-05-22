@@ -1,0 +1,234 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>net.crowear</groupId>
+		<artifactId>jpro_crowear_hp</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+	<artifactId>jpro_crowear_hp-shop</artifactId>
+	<name>The actual shop</name>
+	<url>https://crowear.net</url>
+	<!-- PROPERTIES -->
+	<properties>
+		<argon2jvm.version>2.11</argon2jvm.version>
+		<controlsfx.version>11.1.2</controlsfx.version>
+		<eclipselink.version>4.0.1</eclipselink.version>
+		<fontawesome.version>4.7.0-9.1.2</fontawesome.version>
+		<h2.version>2.1.214</h2.version>
+		<jpro.version>2023.1.0</jpro.version>
+		<mvvmfx.version>1.9.0-SNAPSHOT</mvvmfx.version>
+		<shiro.version>1.11.0</shiro.version>
+	</properties>
+	<!-- DEPENDENCIES -->
+	<dependencies>
+		<!-- ADVANCED BINDINGS -->
+		<dependency>
+			<groupId>eu.lestard</groupId>
+			<artifactId>advanced-bindings</artifactId>
+		</dependency>
+		<!-- ARGON2 JVM -->
+		<dependency>
+			<groupId>de.mkammerer</groupId>
+			<artifactId>argon2-jvm</artifactId>
+			<version>${argon2jvm.version}</version>
+		</dependency>
+		<!-- COMMONS LOGGING -->
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+		</dependency>
+		<!-- CONTROLS FX -->
+		<dependency>
+			<groupId>org.controlsfx</groupId>
+			<artifactId>controlsfx</artifactId>
+			<version>${controlsfx.version}</version>
+		</dependency>
+		<!-- ECLIPSELINK -->
+		<dependency>
+			<groupId>org.eclipse.persistence</groupId>
+			<artifactId>eclipselink</artifactId>
+			<version>${eclipselink.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.persistence</groupId>
+			<artifactId>org.eclipse.persistence.extension</artifactId>
+			<version>${eclipselink.version}</version>
+		</dependency>
+		<!-- FONTAWESOME -->
+		<dependency>
+			<groupId>de.jensd</groupId>
+			<artifactId>fontawesomefx-fontawesome</artifactId>
+			<version>${fontawesome.version}</version>
+		</dependency>
+		<!-- GOOGLE GUICE + PERSIST + INJECT -->
+		<dependency>
+    <groupId>com.google.inject</groupId>
+    <artifactId>guice</artifactId>    
+</dependency>		
+		<dependency>
+			<groupId>com.google.inject.extensions</groupId>
+			<artifactId>guice-persist</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.guicedee.services</groupId>
+			<artifactId>jakarta.persistence-api</artifactId>
+		</dependency>
+		<!-- H2 DATABASEENGINE -->
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<version>${h2.version}</version>
+		</dependency>
+		<!-- JAVAFX -->
+		<dependency>
+			<groupId>org.openjfx</groupId>
+			<artifactId>javafx-base</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.openjfx</groupId>
+			<artifactId>javafx-controls</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.openjfx</groupId>
+			<artifactId>javafx-fxml</artifactId>
+		</dependency>
+		<!-- JPRO -->
+		<dependency>
+			<groupId>one.jpro</groupId>
+			<artifactId>jpro-routing-core</artifactId>
+			<version>0.14.0</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.sandec.jpro</groupId>
+			<artifactId>jpro-webapi</artifactId>
+			<version>${jpro.version}</version>
+			<scope>compile</scope>
+		</dependency>
+		<!-- LOG4J -->
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-slf4j-impl</artifactId>
+		</dependency>
+		<!-- MVVMFX -->
+		<dependency>
+			<groupId>de.saxsys</groupId>
+			<artifactId>mvvmfx</artifactId>
+			<version>${mvvmfx.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>de.saxsys</groupId>
+			<artifactId>mvvmfx-guice</artifactId>
+			<version>${mvvmfx.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>de.saxsys</groupId>
+			<artifactId>mvvmfx-validation</artifactId>
+			<version>${mvvmfx.version}</version>
+		</dependency>
+		<!-- SHIRO -->
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-core</artifactId>
+			<version>${shiro.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-guice</artifactId>
+			<version>${shiro.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>com.google.inject</groupId>
+					<artifactId>guice</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+	</dependencies>
+	<!-- PLUGIN REPOSITORIES -->
+	<pluginRepositories>
+		<pluginRepository>
+			<id>jpro - sandec repository</id>
+			<url>https://sandec.jfrog.io/artifactory/repo/</url>
+		</pluginRepository>
+	</pluginRepositories>
+	<!-- REPOSITORIES -->
+	<repositories>
+		<repository>
+			<id>jpro - sandec repository</id>
+			<url>https://sandec.jfrog.io/artifactory/repo/</url>
+		</repository>
+		<repository>
+			<id>sonatype-snapshots</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+	<!-- BUILD -->
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>one.jpro</groupId>
+				<artifactId>jpro-maven-plugin</artifactId>
+				<version>${jpro.version}</version>
+				<configuration>
+					<mainClassName>net.potpourri_csc.homepage.Homepage</mainClassName>
+				</configuration>
+			</plugin>
+			<!-- -->
+			<plugin>
+				<groupId>org.openjfx</groupId>
+				<artifactId>javafx-maven-plugin</artifactId>
+				<version>0.0.6</version>
+				<configuration>
+					<mainClass>net.potpourri_csc.homepage.Homepage</mainClass>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>3.2.0</version>
+				<executions>
+					<execution>
+						<id>copy-resources</id>
+						<phase>validate</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${basedir}/target/classes/</outputDirectory>
+							<encoding>UTF-8</encoding>
+							<resources>
+								<resource>
+									<directory>src/main/java/</directory>
+									<filtering>false</filtering>
+									<includes>
+										<include>**/*.fxml</include>
+									</includes>
+								</resource>
+								<resource>
+									<directory>src/main/resources</directory>
+									<filtering>false</filtering>
+									<includes>
+										<include>**/*</include>
+									</includes>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>

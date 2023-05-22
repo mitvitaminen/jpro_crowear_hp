@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HBox>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+
+<HBox xmlns:fx="http://javafx.com/fxml/1"
+  fx:controller="net.crowear.shop.ui.component.statusbar.StatusBarView"
+  styleClass="lightGreyBackground">
+  <padding>
+    <Insets bottom="5" left="5" right="5" top="5" />
+  </padding>
+  <Label text="fooLabel" />
+</HBox>

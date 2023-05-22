@@ -1,0 +1,28 @@
+package net.crowear.shop.domain.repository;
+
+import com.google.inject.Inject;
+import com.google.inject.Provider;
+
+import net.crowear.shop.domain.model.Message;
+import jakarta.persistence.EntityManager;
+
+public class MessageRepository implements AbstractJpaRepository<Message, Long> {
+
+   private final Provider<EntityManager> entityManagerProvider;
+
+   @Inject
+   public MessageRepository(final Provider<EntityManager> entityManagerProvider) {
+      this.entityManagerProvider = entityManagerProvider;
+   }
+
+   @Override
+   public EntityManager getEntityManager() {
+      return entityManagerProvider.get();
+   }
+
+   @Override
+   public Class<Message> getType() {
+      return Message.class;
+   }
+
+}

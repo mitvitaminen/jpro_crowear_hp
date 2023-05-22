@@ -1,0 +1,61 @@
+package net.crowear.shop.domain.model;
+
+import java.math.BigDecimal;
+
+public class ShopItem implements DbObject {
+
+   enum Size {
+      L, M, S, XL, XS, XXL
+   }
+
+   private static final long serialVersionUID = 1L;;
+
+   private String artikelnummer;
+   private BigDecimal discount;
+   private long id;
+   private BigDecimal price;
+   private Size size;
+
+   public String getArtikelnummer() {
+      return artikelnummer;
+   }
+
+   public BigDecimal getDiscount() {
+      return discount;
+   }
+
+   @Override
+   public long getId() {
+      return id;
+   }
+
+   public int getPrice() {
+      return price.intValue();
+   }
+
+   public Size getSize() {
+      return size;
+   }
+
+   public void setArtikelnummer(String artikelnummer) {
+      this.artikelnummer = artikelnummer;
+   }
+
+   public void setDiscount(BigDecimal discount) {
+      this.discount = discount;
+   }
+
+   @Override
+   public void setId(long id) {
+      this.id = id;
+   }
+
+   public void setPrice(BigDecimal price) {
+      this.price = price;
+   }
+
+   public void setSize(Size size) {
+      this.size = size;
+   }
+
+}

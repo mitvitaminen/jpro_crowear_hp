@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE VBox>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="net.crowear.shop.ui.dialog.login.LoginDialogView"
+	styleClass="darkGreyBackground" spacing="10" maxWidth="640">
+	<padding>
+		<Insets top="10" bottom="10" left="10" right="10" />
+	</padding>
+	<fx:include
+		source="../../component/localeselector/LocaleSelectorView.fxml" />
+	<HBox>
+
+		<HBox spacing="10" alignment="BASELINE_LEFT">
+			<ImageView fitWidth="55.55" pickOnBounds="true"
+				styleClass="logo" preserveRatio="true" />
+			<Label text="${controller.lang.label.login.welcome.text}"
+				styleClass="font_2em" wrapText="true" />
+
+		</HBox>
+		<GridPane hgap="5" vgap="10">
+			<columnConstraints>
+				<ColumnConstraints percentWidth="15.0" />
+				<ColumnConstraints percentWidth="85.0" />
+			</columnConstraints>
+			<HBox alignment="CENTER_RIGHT" GridPane.rowIndex="0"
+				GridPane.columnIndex="0">
+				<Label text="${controller.lang.label.login.username.value}" />
+			</HBox>
+			<TextField fx:id="usernameTextField" GridPane.rowIndex="0"
+				GridPane.columnIndex="1" />
+			<HBox alignment="CENTER_RIGHT" GridPane.rowIndex="1"
+				GridPane.columnIndex="0">
+				<Label text="${controller.lang.label.login.password.value}" />
+			</HBox>
+			<PasswordField fx:id="passwordField"
+				GridPane.rowIndex="1" GridPane.columnIndex="1"
+				styleClass="poisonText" />
+			<VBox alignment="CENTER_RIGHT" GridPane.columnIndex="1"
+				GridPane.rowIndex="2">
+				<HBox alignment="CENTER_RIGHT">
+					<Button text="${controller.lang.label.cancel.button}"
+						onAction="#buttonHandleCancelAction" />
+					<Button text="${controller.lang.label.login.button}"
+						onAction="#buttonHandleLoginAction" />
+				</HBox>
+				<Label fx:id="loginFailLabel" wrapText="true"
+					text="${controller.lang.err.login.fail.value}"
+					styleClass="textFillRed" />
+			</VBox>
+		</GridPane>
+	</HBox>
+</VBox>

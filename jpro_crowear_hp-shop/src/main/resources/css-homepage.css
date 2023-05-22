@@ -1,0 +1,135 @@
+@font-face {	
+    src: url("./font/DaysOne-Regular.ttf");
+}
+@font-face {	
+    src: url("./font/DenkOne-Regular.ttf");
+}
+@font-face {
+	src: url("./font/EclipticBRK.ttf");
+}
+@font-face {
+	src: url("./font/GameOfSquids.ttf");
+}
+* {
+	-light-green: rgb(0.0,155.0,55.0);		
+	-light-grey: rgb(81.0,81.0,81.0);
+	-dark-green: rgb(0.0,55.0,42.0);
+	-dark-grey: rgb(55.0,55.0,55.0);
+} 
+.button {
+   -fx-background-color: -dark-green;
+}
+.button:armed, .button:aktive, .button:hover {
+   -fx-background-color: -light-green;
+}
+.button, .darkGreyBackground {
+   -fx-background-color: -dark-grey;
+}
+.lightGreyBackground {
+   -fx-background-color: -light-grey;
+}
+.button:active, .button:armed, .button:hover {
+  	-fx-background-radius: 5.0 5.0 5.0 5.0;
+}
+.topLeftMenuButton:active, .topLeftMenuButton:armed, .topLeftMenuButton:hover{
+	-fx-background-radius: 8.0 0.0 0.0 0.0;
+}
+.topRightMenuButton:active, .topRightMenuButton:armed, .topRightMenuButton:hover {
+	-fx-background-radius: 0.0 8.0 0.0 0.0;
+}
+.bottomRightMenuButton:active, .bottomRightMenuButton:armed,  .bottomRightMenuButton:hover {
+	-fx-border-radius: 0.0 0.0 8.0 0.0;
+}
+.bottomLeftMenuButton:active, .bottomLeftMenuButton:armed,  .bottomLeftMenuButton:hover {
+	-fx-background-radius: 0.0 0.0 0.0 8.0;
+}
+.button:active, .button:a-familyrmed, .button:hover {
+  	-fx-border-color: -dark-green;
+}
+.button {
+  	-fx-border-color: -light-green;
+}
+.button {
+	-fx-border-radius: 0.0 0.0 0.0 0.0;
+}
+.button:active, .button:armed, .button:hover {
+  	-fx-border-radius: 5.0 5.0 5.0 5.0;
+}
+.topLeftMenuButton:active, .topLeftMenuButton:armed, .topLeftMenuButton:hover{
+	-fx-border-radius: 8.0 0.0 0.0 0.0;
+}
+.topRightMenuButton:active, .topRightMenuButton:armed, .topRightMenuButton:hover {
+	-fx-border-radius: 0.0 8.0 0.0 0.0;
+}
+.bottomRightMenuButton:active, .bottomRightMenuButton:armed,  .bottomRightMenuButton:hover {
+	-fx-border-radius: 0.0 0.0 8.0 0.0;
+}
+.bottomLeftMenuButton:active, .bottomLeftMenuButton:armed,  .bottomLeftMenuButton:hover {
+	-fx-border-radius: 0.0 0.0 0.0 8.0;
+}
+.button {
+	-fx-border-style: solid;
+}
+.button {
+	-fx-border-width: 1.5px;
+}
+.label {
+	-fx-color: -light-green;
+}
+.button:aktive .text, .button:armed .text, .button:hover .text{
+	-fx-color: -dark-green;
+}
+.button .text {
+	-fx-effect: dropshadow(gaussian, rgb(255.0, 255.0, 255.0), 5.55, 0.25, 0.0, 0.0);
+}
+.banner .label, .button:aktive .text, .button:armed .text, .button:hover .text {
+	-fx-effect: dropshadow(gaussian, rgb(31.0, 31.0, 31.0), 5.55, 0.25, 0.0, 0.0);
+}
+.button:aktive .text, .button:armed .text, .button:hover .text {
+	-fx-fill: -dark-green;
+}
+.text {
+	-fx-fill: -light-green;
+}
+.banner {
+	-fx-font-family: 'Game Of Squids';	
+}
+.label, .text{
+	-fx-font-family: 'Ecliptic BRK';
+}
+.font_0_42em {	
+	-fx-font-size: 0.42em;
+}
+.font_0_55em {	
+	-fx-font-size: 0.55em;
+}
+.font_2em {
+	-fx-font-size: 2em;
+}
+.banner {
+	-fx-font-size: 3.3em;
+}
+.img-cannabisfeld{
+	-fx-image: url("./img/img-cannabisfeld.png")	
+}
+.img-construction{
+	-fx-image: url("./img/img-construction.png")	
+}
+.img-flag-de{
+	-fx-image: url("./img/img-flag-de.png")	
+}
+.img-flag-us{
+	-fx-image: url("./img/img-flag-us.png")	
+}
+.button {
+	-fx-text-alignment: justify;
+}
+.button .label{
+	-fx-text-fill: -dark-green;
+}
+.button:active .label, .button:armed .label, .button:hover .label , .label{
+	-fx-text-fill: -light-green;
+}
+.textFillRed {
+	-fx-text-fill: red;
+}

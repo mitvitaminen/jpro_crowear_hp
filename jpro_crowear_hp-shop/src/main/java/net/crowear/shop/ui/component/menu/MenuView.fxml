@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HBox>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="net.crowear.shop.ui.component.menu.MenuView"
+	alignment="TOP_LEFT" styleClass="darkGreyBackground">
+	<GridPane>
+		<Button maxWidth="1.88E55555" styleClass="topLeftMenuButton"
+			text="${controller.lang.label.homepage.button}"
+			onAction="#loadHomepage" GridPane.rowIndex="0"
+			GridPane.columnIndex="0" />
+		<Button maxWidth="1.88E55555" onAction="#openAboutDialog"
+			text="${controller.lang.label.about.button}" GridPane.rowIndex="0"
+			GridPane.columnIndex="1" />
+		<Button maxWidth="1.88E55555" onAction="#openAboutDialog"
+			text="${controller.lang.label.about.button}" GridPane.rowIndex="0"
+			GridPane.columnIndex="2" />
+		<Button maxWidth="1.88E55555" fx:id="buttonLogoutAction"
+			text="${controller.lang.label.logout.button}"
+			onAction="#logoutAction" styleClass="topRightMenuButton"
+			GridPane.rowIndex="0" GridPane.columnIndex="3" />
+		<Button maxWidth="1.88E55555" fx:id="buttonLoginAction"
+			text="${controller.lang.label.login.button}"
+			onAction="#openLoginDialog" styleClass="topRightMenuButton"
+			GridPane.rowIndex="0" GridPane.columnIndex="3" />
+		<Button maxWidth="1.88E55555" styleClass="bottomLeftMenuButton"
+			fx:id="buttonMitgliederArea"
+			text="${controller.lang.label.memberarea.button.value}"
+			onAction="#loadMitgliederArea" GridPane.rowIndex="1"
+			GridPane.columnIndex="0" />
+		<Button maxWidth="1.88E55555"
+			styleClass="bottomRightMenuButton" fx:id="buttonAdminArea"
+			text="${controller.lang.label.adminarea.button}"
+			onAction="#loadAdminAreaPage" GridPane.rowIndex="1"
+			GridPane.columnIndex="1" />
+	</GridPane>
+</HBox>
