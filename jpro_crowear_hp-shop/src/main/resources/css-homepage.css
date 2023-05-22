@@ -1,14 +1,18 @@
-@font-face {	
-    src: url("./font/DaysOne-Regular.ttf");
-}
-@font-face {	
-    src: url("./font/DenkOne-Regular.ttf");
+@font-face {
+	font-family: 'Days One';
+    src: url("./jpro/html/font/DaysOne-Regular.ttf");
 }
 @font-face {
-	src: url("./font/EclipticBRK.ttf");
+	font-family: 'Denk One';
+    src: url("./jpro/html/font/DenkOne-Regular.ttf");
 }
 @font-face {
-	src: url("./font/GameOfSquids.ttf");
+	font-family: 'Ecliptic BRK';
+	src: url("./jpro/html/font/EclipticBRK.ttf");
+}
+@font-face {
+	font-family: 'Game Of Squids';
+	src: url("./jpro/html/font/GameOfSquids.ttf");
 }
 * {
 	-light-green: rgb(0.0,155.0,55.0);		
@@ -17,15 +21,19 @@
 	-dark-grey: rgb(55.0,55.0,55.0);
 } 
 .button {
+	background-color: -dark-green;
    -fx-background-color: -dark-green;
 }
 .button:armed, .button:aktive, .button:hover {
+   background-color: -light-green;
    -fx-background-color: -light-green;
 }
 .button, .darkGreyBackground {
+	background-color: -dark-grey;
    -fx-background-color: -dark-grey;
 }
 .lightGreyBackground {
+	background-color: -light-grey;
    -fx-background-color: -light-grey;
 }
 .button:active, .button:armed, .button:hover {
@@ -37,46 +45,56 @@
 .topRightMenuButton:active, .topRightMenuButton:armed, .topRightMenuButton:hover {
 	-fx-background-radius: 0.0 8.0 0.0 0.0;
 }
-.bottomRightMenuButton:active, .bottomRightMenuButton:armed,  .bottomRightMenuButton:hover {
-	-fx-border-radius: 0.0 0.0 8.0 0.0;
-}
 .bottomLeftMenuButton:active, .bottomLeftMenuButton:armed,  .bottomLeftMenuButton:hover {
 	-fx-background-radius: 0.0 0.0 0.0 8.0;
 }
 .button:active, .button:a-familyrmed, .button:hover {
+	border-color: -dark-green;
   	-fx-border-color: -dark-green;
 }
 .button {
+	border-color: -light-green;
   	-fx-border-color: -light-green;
 }
 .button {
+	border-radius: 0.0 0.0 0.0 0.0;
 	-fx-border-radius: 0.0 0.0 0.0 0.0;
 }
 .button:active, .button:armed, .button:hover {
+  	border-radius: 5.0 5.0 5.0 5.0;
   	-fx-border-radius: 5.0 5.0 5.0 5.0;
 }
+
 .topLeftMenuButton:active, .topLeftMenuButton:armed, .topLeftMenuButton:hover{
+	border-radius: 8.0 0.0 0.0 0.0;
 	-fx-border-radius: 8.0 0.0 0.0 0.0;
 }
 .topRightMenuButton:active, .topRightMenuButton:armed, .topRightMenuButton:hover {
+	border-radius: 0.0 8.0 0.0 0.0;
 	-fx-border-radius: 0.0 8.0 0.0 0.0;
 }
 .bottomRightMenuButton:active, .bottomRightMenuButton:armed,  .bottomRightMenuButton:hover {
+	border-radius: 0.0 0.0 8.0 0.0;
 	-fx-border-radius: 0.0 0.0 8.0 0.0;
 }
 .bottomLeftMenuButton:active, .bottomLeftMenuButton:armed,  .bottomLeftMenuButton:hover {
+	border-radius: 0.0 0.0 0.0 8.0;
 	-fx-border-radius: 0.0 0.0 0.0 8.0;
 }
 .button {
+	border-style: solid;
 	-fx-border-style: solid;
 }
 .button {
+	border-width: 1.5px;
 	-fx-border-width: 1.5px;
 }
 .label {
+	color: -light-green;
 	-fx-color: -light-green;
 }
 .button:aktive .text, .button:armed .text, .button:hover .text{
+	color: -dark-green;
 	-fx-color: -dark-green;
 }
 .button .text {
@@ -86,40 +104,48 @@
 	-fx-effect: dropshadow(gaussian, rgb(31.0, 31.0, 31.0), 5.55, 0.25, 0.0, 0.0);
 }
 .button:aktive .text, .button:armed .text, .button:hover .text {
+	fill: -dark-green;
 	-fx-fill: -dark-green;
 }
 .text {
+	fill: -light-green;
 	-fx-fill: -light-green;
 }
 .banner {
+	font-family: 'Game Of Squids';
 	-fx-font-family: 'Game Of Squids';	
 }
 .label, .text{
+	font-family: 'Ecliptic BRK';
 	-fx-font-family: 'Ecliptic BRK';
 }
 .font_0_42em {	
+	font-size: 0.42em;
 	-fx-font-size: 0.42em;
 }
 .font_0_55em {	
+	font-size: 0.55em;
 	-fx-font-size: 0.55em;
 }
 .font_2em {
+	font-size: 2em;
 	-fx-font-size: 2em;
 }
 .banner {
+	font-size: 3.3em;
 	-fx-font-size: 3.3em;
 }
 .img-cannabisfeld{
-	-fx-image: url("./img/img-cannabisfeld.png")	
+	-fx-image: url("./jpro/html/img/img-cannabisfeld.png")	
 }
 .img-construction{
-	-fx-image: url("./img/img-construction.png")	
+	-fx-image: url("./jpro/html/img/img-construction.png")	
 }
 .img-flag-de{
-	-fx-image: url("./img/img-flag-de.png")	
+	-fx-image: url("./jpro/html/img/img-flag-de.png")	
 }
 .img-flag-us{
-	-fx-image: url("./img/img-flag-us.png")	
+	-fx-image: url("./jpro/html/img/img-flag-us.png")	
 }
 .button {
 	-fx-text-alignment: justify;
