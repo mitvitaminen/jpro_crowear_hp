@@ -29,7 +29,6 @@ import net.crowear.shop.ui.util.DialogHelper;
 import one.jpro.routing.Route;
 import one.jpro.routing.RouteNode;
 import one.jpro.routing.RouteUtils;
-import one.jpro.routing.sessionmanager.SessionManager;
 
 public class Homepage extends MvvmfxGuiceApplication {
 
@@ -66,7 +65,7 @@ public class Homepage extends MvvmfxGuiceApplication {
          stage.centerOnScreen();
          routeNode.setRoute(createRoute(stage));
          stage.show();
-         routeNode.start(SessionManager.getDefault(routeNode, stage));
+//         routeNode.start(SessionManager.getDefault(routeNode, stage));
       } catch (final Exception e) {
          final ViewTuple<ErrorDialogView, ErrorDialogViewModel> viewTuple = FluentViewLoader
                .fxmlView(ErrorDialogView.class).load();

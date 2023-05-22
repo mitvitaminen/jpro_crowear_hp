@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import com.google.inject.persist.Transactional;
+
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
 import jakarta.persistence.criteria.CriteriaBuilder;
@@ -12,6 +14,7 @@ import jakarta.persistence.criteria.Root;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+@Transactional
 public interface AbstractJpaRepository<T, ID> {
 
    default void delete(ID id) {
@@ -56,6 +59,7 @@ public interface AbstractJpaRepository<T, ID> {
 
    Class<T> getType();
 
+   @Transactional
    default T save(final T t) {
       final EntityManager entityManager = getEntityManager();
       return entityManager.merge(t);
