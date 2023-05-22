@@ -1,0 +1,88 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>net.crowear</groupId>
+	<artifactId>jpro_crowear_hp</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>CroWear homepage</name>
+	<description>The webshop for CroWear.</description>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<advancedbind.version>0.4.0</advancedbind.version>
+		<commonslog.version>1.2</commonslog.version>
+		<guice.version>7.0.0</guice.version>
+		<guicedee.version>1.2.2.1</guicedee.version>		
+		<javafx.version>19.0.2.1</javafx.version>
+		<log4j.version>2.20.0</log4j.version>
+		<java.version>18</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+        <maven.compiler.release>${java.version}</maven.compiler.release>
+	</properties>
+	<modules>
+		<module>jpro_crowear_hp-shop</module>
+		<module>jpro_crowear_hp-animations</module>
+	</modules>
+	<dependencyManagement>
+		<dependencies>
+			<!-- ADVANCED BINDINGS -->
+			<dependency>
+				<groupId>eu.lestard</groupId>
+				<artifactId>advanced-bindings</artifactId>
+				<version>${advancedbind.version}</version>
+			</dependency>
+			<!-- COMMONS LOGGING -->
+			<dependency>
+				<groupId>commons-logging</groupId>
+				<artifactId>commons-logging</artifactId>
+				<version>${commonslog.version}</version>
+			</dependency>
+			<!-- GOOGLE GUICE + PERSIST + INJECT -->
+			<dependency>
+    <groupId>com.google.inject</groupId>
+    <artifactId>guice</artifactId>
+    <version>${guice.version}</version>
+</dependency>		
+		<dependency>
+			<groupId>com.google.inject.extensions</groupId>
+			<artifactId>guice-persist</artifactId>
+			 <version>${guice.version}</version>
+		</dependency>
+			
+			<!-- JAVAFX -->
+			<dependency>
+				<groupId>org.openjfx</groupId>
+				<artifactId>javafx-base</artifactId>
+				<version>${javafx.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.openjfx</groupId>
+				<artifactId>javafx-controls</artifactId>
+				<version>${javafx.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.openjfx</groupId>
+				<artifactId>javafx-fxml</artifactId>
+				<version>${javafx.version}</version>
+			</dependency>
+			<!-- LOG4J -->
+			<dependency>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-api</artifactId>
+				<version>${log4j.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-core</artifactId>
+				<version>${log4j.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-slf4j-impl</artifactId>
+				<version>${log4j.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+</project>
