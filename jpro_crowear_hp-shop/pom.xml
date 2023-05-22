@@ -64,16 +64,12 @@
 		</dependency>
 		<!-- GOOGLE GUICE + PERSIST + INJECT -->
 		<dependency>
-    <groupId>com.google.inject</groupId>
-    <artifactId>guice</artifactId>    
-</dependency>		
+			<groupId>com.google.inject</groupId>
+			<artifactId>guice</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>com.google.inject.extensions</groupId>
 			<artifactId>guice-persist</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.guicedee.services</groupId>
-			<artifactId>jakarta.persistence-api</artifactId>
 		</dependency>
 		<!-- H2 DATABASEENGINE -->
 		<dependency>
