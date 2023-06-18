@@ -1,4 +1,4 @@
-package net.crowear.shop.security.shiro;
+package net.chrisrocholl.homepage.security.shiro;
 
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;

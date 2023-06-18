@@ -1,9 +1,9 @@
-package net.crowear.shop.ui.component.content.member;
+package net.chrisrocholl.homepage.ui.component.content.member;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import net.crowear.shop.ui.BaseView;
+import net.chrisrocholl.homepage.ui.BaseView;
 import javafx.fxml.Initializable;
 
 public class MemberContentView extends BaseView<MemberContentViewModel> implements Initializable {

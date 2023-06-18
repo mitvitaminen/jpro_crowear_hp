@@ -1,4 +1,4 @@
-package net.crowear.shop.domain.service;
+package net.chrisrocholl.homepage.domain.service;
 
 public interface TestdataService {
 

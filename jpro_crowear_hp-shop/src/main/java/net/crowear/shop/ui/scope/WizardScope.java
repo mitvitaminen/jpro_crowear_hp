@@ -1,4 +1,4 @@
-package net.crowear.shop.ui.scope;
+package net.chrisrocholl.homepage.ui.scope;
 
 import de.saxsys.mvvmfx.Scope;
 import de.saxsys.mvvmfx.utils.mapping.ModelWrapper;

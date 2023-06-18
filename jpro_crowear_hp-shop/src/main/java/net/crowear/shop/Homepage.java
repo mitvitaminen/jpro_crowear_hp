@@ -1,4 +1,4 @@
-package net.crowear.shop;
+package net.chrisrocholl.homepage;
 
 import java.util.List;
 
@@ -10,24 +10,29 @@ import com.google.inject.Module;
 import de.saxsys.mvvmfx.FluentViewLoader;
 import de.saxsys.mvvmfx.ViewTuple;
 import de.saxsys.mvvmfx.guice.MvvmfxGuiceApplication;
+import javafx.scene.Scene;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
-import net.crowear.shop.module.DataSourceModule;
-import net.crowear.shop.module.EventBusModule;
-import net.crowear.shop.module.PersistenceModule;
-import net.crowear.shop.module.RepositoryModule;
-import net.crowear.shop.module.ServiceModule;
-import net.crowear.shop.module.ShiroAuthModule;
-import net.crowear.shop.ui.dialog.error.ErrorDialogView;
-import net.crowear.shop.ui.dialog.error.ErrorDialogViewModel;
-import net.crowear.shop.ui.page.index.IndexPageView;
-import net.crowear.shop.ui.page.index.IndexPageViewModel;
-import net.crowear.shop.ui.page.memberarea.MemberAreaPageView;
-import net.crowear.shop.ui.page.memberarea.MemberAreaPageViewModel;
-import net.crowear.shop.ui.util.DialogHelper;
+import net.chrisrocholl.homepage.mod.DataSourceModule;
+import net.chrisrocholl.homepage.mod.EventBusModule;
+import net.chrisrocholl.homepage.mod.PersistenceModule;
+import net.chrisrocholl.homepage.mod.ProviderModule;
+import net.chrisrocholl.homepage.mod.RepositoryModule;
+import net.chrisrocholl.homepage.mod.ServiceModule;
+import net.chrisrocholl.homepage.mod.ShiroAuthModule;
+import net.chrisrocholl.homepage.ui.dialog.error.ErrorDialogView;
+import net.chrisrocholl.homepage.ui.dialog.error.ErrorDialogViewModel;
+import net.chrisrocholl.homepage.ui.page.index.IndexPageView;
+import net.chrisrocholl.homepage.ui.page.index.IndexPageViewModel;
+import net.chrisrocholl.homepage.ui.page.memberarea.MemberAreaPageView;
+import net.chrisrocholl.homepage.ui.page.memberarea.MemberAreaPageViewModel;
+import net.chrisrocholl.homepage.ui.util.DialogHelper;
 import one.jpro.routing.Route;
+import one.jpro.routing.RouteNode;
 import one.jpro.routing.RouteUtils;
+import one.jpro.routing.sessionmanager.SessionManager;
 
-public class Homepage extends MvvmfxGuiceApplication implements RouteApp {
+public class Homepage extends MvvmfxGuiceApplication {
 
    private static final Logger LOG = LogManager.getLogger(Homepage.class);
 
@@ -36,7 +41,45 @@ public class Homepage extends MvvmfxGuiceApplication implements RouteApp {
       launch(args);
    }
 
-   public Route createRoute(Stage stage) {
+   @Override
+   public void initGuiceModules(final List<Module> modules) throws Exception {
+      modules.add(new DataSourceModule());
+      modules.add(new EventBusModule());
+      modules.add(new PersistenceModule());
+      modules.add(new ProviderModule());
+      modules.add(new RepositoryModule());
+      modules.add(new ServiceModule());
+      modules.add(new ShiroAuthModule());
+   }
+
+   @Override
+   public void startMvvmfx(final Stage stage) throws Exception {
+      try {
+         final RouteNode routeNode = new RouteNode(stage);
+
+         // Add node between RouteNode and Scene, so Popups work correctly with
+         // ScenicView
+         final StackPane root = new StackPane(routeNode);
+
+         final Scene scene = new Scene(root);
+         scene.getStylesheets().addAll("css-homepage.css");
+         stage.setScene(scene);
+         routeNode.setRoute(createRoute());
+         stage.show();
+         routeNode.start(SessionManager.getDefault(routeNode, stage));
+      } catch (final Exception e) {
+         final ViewTuple<ErrorDialogView, ErrorDialogViewModel> viewTuple = FluentViewLoader
+               .fxmlView(ErrorDialogView.class).load();
+
+         final Stage dialogStage = DialogHelper.showDialog(viewTuple.getView(), stage, "css-homepage.css");
+         dialogStage.show();
+         viewTuple.getViewModel().setDialogStage(dialogStage);
+
+         throw e;
+      }
+   }
+
+   private Route createRoute() {
       final ViewTuple<IndexPageView, IndexPageViewModel> indexPageViewTuple = FluentViewLoader
             .fxmlView(IndexPageView.class).load();
       indexPageViewTuple.getCodeBehind().setContent(indexPageViewTuple.getView());
@@ -46,33 +89,8 @@ public class Homepage extends MvvmfxGuiceApplication implements RouteApp {
       memberAreaPageViewTuple.getCodeBehind().setContent(memberAreaPageViewTuple.getView());
 
       return Route.empty().and(RouteUtils.redirect("/", "/crowearindex"))
-            .and(RouteUtils.get("/crowearindex", (s) -> indexPageViewTuple.getCodeBehind()))
-            .and(RouteUtils.get("/memberarea", (s) -> memberAreaPageViewTuple.getCodeBehind()));
-   }
-
-   @Override
-   public void initGuiceModules(final List<Module> modules) throws Exception {
-      modules.add(new DataSourceModule());
-      modules.add(new EventBusModule());
-      modules.add(new PersistenceModule());
-      modules.add(new RepositoryModule());
-      modules.add(new ServiceModule());
-      modules.add(new ShiroAuthModule());
-   }
-
-   @Override
-   public void startMvvmfx(final Stage stage) throws Exception {
-      try {
-         startRoute(stage);
-      } catch (final Exception e) {
-         final ViewTuple<ErrorDialogView, ErrorDialogViewModel> viewTuple = FluentViewLoader
-               .fxmlView(ErrorDialogView.class).load();
-
-         final Stage dialogStage = DialogHelper.showDialog(viewTuple.getView(), stage, "css-homepage.css");
-         dialogStage.show();
-         viewTuple.getViewModel().setDialogStage(dialogStage);
-         e.printStackTrace();
-      }
+            .and(RouteUtils.getNode("/crowearindex", (s) -> indexPageViewTuple.getView()))
+            .and(RouteUtils.getNode("/memberarea", (s) -> memberAreaPageViewTuple.getView()));
    }
 
 }

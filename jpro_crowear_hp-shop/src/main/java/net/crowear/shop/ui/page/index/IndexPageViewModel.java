@@ -1,6 +1,7 @@
-package net.crowear.shop.ui.page.index;
+package net.chrisrocholl.homepage.ui.page.index;
 
 import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 
 import com.google.inject.Inject;
 
@@ -8,33 +9,26 @@ import de.saxsys.mvvmfx.FluentViewLoader;
 import de.saxsys.mvvmfx.ViewTuple;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import net.crowear.shop.domain.service.LocaleManagerService;
-import net.crowear.shop.domain.service.TestdataService;
-import net.crowear.shop.ui.BaseViewModel;
-import net.crowear.shop.ui.dialog.about.AboutDialogView;
-import net.crowear.shop.ui.dialog.about.AboutDialogViewModel;
-import net.crowear.shop.ui.dialog.login.LoginDialogView;
-import net.crowear.shop.ui.dialog.login.LoginDialogViewModel;
-import net.crowear.shop.ui.page.memberarea.MemberAreaPageView;
-import net.crowear.shop.ui.page.memberarea.MemberAreaPageViewModel;
-import net.crowear.shop.ui.util.DialogHelper;
+import net.chrisrocholl.homepage.domain.service.LocaleManagerService;
+import net.chrisrocholl.homepage.ui.BaseViewModel;
+import net.chrisrocholl.homepage.ui.dialog.about.AboutDialogView;
+import net.chrisrocholl.homepage.ui.dialog.about.AboutDialogViewModel;
+import net.chrisrocholl.homepage.ui.dialog.login.LoginDialogView;
+import net.chrisrocholl.homepage.ui.dialog.login.LoginDialogViewModel;
+import net.chrisrocholl.homepage.ui.page.memberarea.MemberAreaPageView;
+import net.chrisrocholl.homepage.ui.page.memberarea.MemberAreaPageViewModel;
+import net.chrisrocholl.homepage.ui.util.DialogHelper;
 
 public class IndexPageViewModel extends BaseViewModel {
 
    private final Stage primaryStage;
-   private final TestdataService testDataService;
 
    @Inject
    public IndexPageViewModel(LocaleManagerService lang, final Stage primaryStage,
-         final org.apache.shiro.mgt.SecurityManager securityManager, final TestdataService testDataService) {
+         final org.apache.shiro.mgt.SecurityManager securityManager) {
       super(lang);
       this.primaryStage = primaryStage;
-      this.testDataService = testDataService;
       SecurityUtils.setSecurityManager(securityManager);
-   }
-
-   public void initialize() {
-      testDataService.createData();
    }
 
    public void loadHomepage() {
@@ -73,7 +67,7 @@ public class IndexPageViewModel extends BaseViewModel {
 
    }
 
-//   @RequiresRoles("user")
+   @RequiresRoles("user")
    private void loadMemberSectionPage() {
       final ViewTuple<MemberAreaPageView, MemberAreaPageViewModel> viewTupleStartingPageView = FluentViewLoader
             .fxmlView(MemberAreaPageView.class).load();

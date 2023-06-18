@@ -1,9 +1,9 @@
-package net.crowear.shop.ui.component.dialog;
+package net.chrisrocholl.homepage.ui.dialog;
 
 import java.util.Optional;
 
-import net.crowear.shop.domain.service.LocaleManagerService;
-import net.crowear.shop.ui.BaseViewModel;
+import net.chrisrocholl.homepage.domain.service.LocaleManagerService;
+import net.chrisrocholl.homepage.ui.BaseViewModel;
 import javafx.stage.Stage;
 
 public abstract class DialogViewModel extends BaseViewModel {

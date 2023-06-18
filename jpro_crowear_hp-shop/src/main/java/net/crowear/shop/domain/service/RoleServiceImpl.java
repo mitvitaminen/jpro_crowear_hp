@@ -1,10 +1,10 @@
-package net.crowear.shop.domain.service;
+package net.chrisrocholl.homepage.domain.service;
 
 import com.google.inject.Inject;
 
-import net.crowear.shop.domain.model.Role;
-import net.crowear.shop.domain.repository.AbstractJpaRepository;
-import net.crowear.shop.domain.repository.RoleRepository;
+import net.chrisrocholl.homepage.domain.model.Role;
+import net.chrisrocholl.homepage.domain.repository.AbstractJpaRepository;
+import net.chrisrocholl.homepage.domain.repository.RoleRepository;
 
 public class RoleServiceImpl implements AbstractJpaService<Role, Long> {
 

@@ -1,12 +1,12 @@
-package net.crowear.shop.domain.service;
+package net.chrisrocholl.homepage.domain.service;
 
 import java.util.Optional;
 
 import com.google.inject.Inject;
 
-import net.crowear.shop.domain.model.User;
-import net.crowear.shop.domain.repository.AbstractJpaRepository;
-import net.crowear.shop.domain.repository.UserRepository;
+import net.chrisrocholl.homepage.domain.model.User;
+import net.chrisrocholl.homepage.domain.repository.AbstractJpaRepository;
+import net.chrisrocholl.homepage.domain.repository.UserRepository;
 
 public class UserServiceImpl implements UserService {
 

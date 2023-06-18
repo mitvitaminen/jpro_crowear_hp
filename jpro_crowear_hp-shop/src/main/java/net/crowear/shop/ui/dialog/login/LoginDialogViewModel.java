@@ -1,4 +1,4 @@
-package net.crowear.shop.ui.dialog.login;
+package net.chrisrocholl.homepage.ui.dialog.login;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -14,10 +14,10 @@ import org.apache.shiro.subject.Subject;
 import com.google.common.base.Strings;
 import com.google.inject.Inject;
 
-import net.crowear.shop.domain.service.LocaleManagerService;
-import net.crowear.shop.ui.component.dialog.DialogViewModel;
-import net.crowear.shop.ui.page.memberarea.MemberAreaPageView;
-import net.crowear.shop.ui.page.memberarea.MemberAreaPageViewModel;
+import net.chrisrocholl.homepage.domain.service.LocaleManagerService;
+import net.chrisrocholl.homepage.ui.dialog.DialogViewModel;
+import net.chrisrocholl.homepage.ui.page.memberarea.MemberAreaPageView;
+import net.chrisrocholl.homepage.ui.page.memberarea.MemberAreaPageViewModel;
 import de.saxsys.mvvmfx.FluentViewLoader;
 import de.saxsys.mvvmfx.ViewTuple;
 import javafx.beans.property.BooleanProperty;

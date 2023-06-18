@@ -1,11 +1,11 @@
-package net.crowear.shop.ui.component.messagebox;
+package net.chrisrocholl.homepage.ui.component.messagebox;
 
 import java.net.URL;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
 import java.util.ResourceBundle;
 
-import net.crowear.shop.ui.BaseView;
+import net.chrisrocholl.homepage.ui.BaseView;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;

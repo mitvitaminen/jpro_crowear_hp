@@ -7,7 +7,7 @@
 <?import javafx.stage.Screen?>
 
 <VBox xmlns:fx="http://javafx.com/fxml/1"
-	fx:controller="net.crowear.shop.ui.component.messagebox.MessageBoxView"
+	fx:controller="net.chrisrocholl.homepage.ui.component.messagebox.MessageBoxView"
 	alignment="CENTER_RIGHT" minWidth="270">	
 	<ScrollPane minWidth="270">
 		<VBox fx:id="messagesVBox" spacing="20"

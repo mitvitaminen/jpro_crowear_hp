@@ -1,4 +1,4 @@
-package net.crowear.shop.ui.util;
+package net.chrisrocholl.homepage.ui.util;
 
 import javafx.scene.Parent;
 import javafx.scene.Scene;

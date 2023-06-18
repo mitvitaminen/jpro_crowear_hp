@@ -1,8 +1,8 @@
-package net.crowear.shop.ui.component.localeselector;
+package net.chrisrocholl.homepage.ui.component.localeselector;
 
 import java.util.Locale;
 
-import net.crowear.shop.ui.BaseView;
+import net.chrisrocholl.homepage.ui.BaseView;
 import javafx.fxml.FXML;
 
 public class LocaleSelectorView extends BaseView<LocaleSelectorViewModel> {

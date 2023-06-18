@@ -1,20 +1,20 @@
-package net.crowear.shop.domain.model;
+package net.chrisrocholl.homepage.domain.model;
 
 import java.math.BigDecimal;
 
 public class ShopItem implements DbObject {
 
-   enum Size {
+   public enum Size {
       L, M, S, XL, XS, XXL
    }
 
    private static final long serialVersionUID = 1L;;
 
-   private String artikelnummer;
-   private BigDecimal discount;
-   private long id;
-   private BigDecimal price;
-   private Size size;
+   public String artikelnummer;
+   public BigDecimal discount;
+   public long id;
+   public BigDecimal price;
+   public Size size;
 
    public String getArtikelnummer() {
       return artikelnummer;

@@ -1,10 +1,10 @@
-package net.crowear.shop.domain.service;
+package net.chrisrocholl.homepage.domain.service;
 
 import com.google.inject.Inject;
 
-import net.crowear.shop.domain.model.Permission;
-import net.crowear.shop.domain.repository.AbstractJpaRepository;
-import net.crowear.shop.domain.repository.PermissionRepository;
+import net.chrisrocholl.homepage.domain.model.Permission;
+import net.chrisrocholl.homepage.domain.repository.AbstractJpaRepository;
+import net.chrisrocholl.homepage.domain.repository.PermissionRepository;
 
 public class PermissionServiceImpl implements AbstractJpaService<Permission, Long> {
 

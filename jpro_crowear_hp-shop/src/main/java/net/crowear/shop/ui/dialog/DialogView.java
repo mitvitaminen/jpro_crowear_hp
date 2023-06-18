@@ -1,6 +1,6 @@
-package net.crowear.shop.ui.component.dialog;
+package net.chrisrocholl.homepage.ui.dialog;
 
-import net.crowear.shop.ui.BaseView;
+import net.chrisrocholl.homepage.ui.BaseView;
 
 public abstract class DialogView<T extends DialogViewModel> extends BaseView<T> {
 

@@ -1,9 +1,9 @@
-package net.crowear.shop.ui.component.statusbar;
+package net.chrisrocholl.homepage.ui.component.statusbar;
 
 import com.google.inject.Inject;
 
-import net.crowear.shop.domain.service.LocaleManagerService;
-import net.crowear.shop.ui.BaseViewModel;
+import net.chrisrocholl.homepage.domain.service.LocaleManagerService;
+import net.chrisrocholl.homepage.ui.BaseViewModel;
 
 public class StatusBarViewModel extends BaseViewModel {
 

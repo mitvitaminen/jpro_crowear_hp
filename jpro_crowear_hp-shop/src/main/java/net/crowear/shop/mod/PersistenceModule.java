@@ -1,4 +1,4 @@
-package net.crowear.shop.module;
+package net.chrisrocholl.homepage.mod;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -12,6 +12,7 @@ import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import com.google.inject.persist.PersistService;
 import com.google.inject.persist.jpa.JpaPersistModule;
+import com.google.inject.persist.jpa.JpaPersistOptions;
 
 public class PersistenceModule extends AbstractModule {
 
@@ -29,7 +30,9 @@ public class PersistenceModule extends AbstractModule {
    @Override
    protected void configure() {
       super.configure();
-      binder().install(new JpaPersistModule("myPersistenceUnit").properties(getPersistenceProperties()));
+      binder().install(new JpaPersistModule("myPersistenceUnit",
+            JpaPersistOptions.builder().setAutoBeginWorkOnEntityManagerCreation(true).build())
+            .properties(getPersistenceProperties()));
       binder().bind(PersistenceInitializer.class).asEagerSingleton();
 
    }
@@ -44,6 +47,13 @@ public class PersistenceModule extends AbstractModule {
          properties.load(stream);
       } catch (final IOException e) {
          LOG.error("IOException loading db.properties");
+      } finally {
+         if (stream != null) {
+            try {
+               stream.close();
+            } catch (final IOException ignored) {
+            }
+         }
       }
       return properties;
    }

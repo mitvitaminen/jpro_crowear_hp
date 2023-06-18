@@ -1,18 +1,18 @@
 @font-face {
 	font-family: 'Days One';
-    src: url("./jpro/html/font/DaysOne-Regular.ttf");
+    src: url("./font/DaysOne-Regular.ttf");
 }
 @font-face {
 	font-family: 'Denk One';
-    src: url("./jpro/html/font/DenkOne-Regular.ttf");
+    src: url("./font/DenkOne-Regular.ttf");
 }
 @font-face {
 	font-family: 'Ecliptic BRK';
-	src: url("./jpro/html/font/EclipticBRK.ttf");
+	src: url("./font/EclipticBRK.ttf");
 }
 @font-face {
 	font-family: 'Game Of Squids';
-	src: url("./jpro/html/font/GameOfSquids.ttf");
+	src: url("./font/GameOfSquids.ttf");
 }
 * {
 	-light-green: rgb(0.0,155.0,55.0);		
@@ -136,16 +136,16 @@
 	-fx-font-size: 3.3em;
 }
 .img-cannabisfeld{
-	-fx-image: url("./jpro/html/img/img-cannabisfeld.png")	
+	-fx-image: url("./img/img-cannabisfeld.png")	
 }
 .img-construction{
-	-fx-image: url("./jpro/html/img/img-construction.png")	
+	-fx-image: url("./img/img-construction.png")	
 }
 .img-flag-de{
-	-fx-image: url("./jpro/html/img/img-flag-de.png")	
+	-fx-image: url("./img/img-flag-de.png")	
 }
 .img-flag-us{
-	-fx-image: url("./jpro/html/img/img-flag-us.png")	
+	-fx-image: url("./img/img-flag-us.png")	
 }
 .button {
 	-fx-text-alignment: justify;

@@ -8,7 +8,7 @@
 
 
 <HBox xmlns:fx="http://javafx.com/fxml/1"
-	fx:controller="net.crowear.shop.ui.component.impressum.ImpressumView"
+	fx:controller="net.chrisrocholl.homepage.ui.component.impressum.ImpressumView"
 	alignment="TOP_CENTER">
 	<VBox alignment="CENTER">
 		<Label text="${controller.lang.label.impressum.label}"

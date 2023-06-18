@@ -1,4 +1,4 @@
-package net.crowear.shop.module;
+package net.chrisrocholl.homepage.mod;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -60,6 +60,7 @@ public class DataSourceModule extends AbstractModule {
       final InputStream stream = getClass().getResourceAsStream("/db.properties");
       if (stream == null) {
          LOG.error("No db.properties!!!");
+         return null;
       }
       try {
          properties.load(stream);

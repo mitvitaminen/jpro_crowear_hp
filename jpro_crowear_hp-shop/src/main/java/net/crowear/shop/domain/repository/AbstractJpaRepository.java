@@ -1,4 +1,4 @@
-package net.crowear.shop.domain.repository;
+package net.chrisrocholl.homepage.domain.repository;
 
 import java.util.List;
 import java.util.Optional;
@@ -25,7 +25,6 @@ public interface AbstractJpaRepository<T, ID> {
 
    default ObservableList<T> findAll() {
       final EntityManager entityManager = getEntityManager();
-
       final CriteriaQuery<T> criteriaQuery = entityManager.getCriteriaBuilder().createQuery(getType());
       criteriaQuery.from(getType());
 
@@ -47,12 +46,14 @@ public interface AbstractJpaRepository<T, ID> {
       criteriaQuery.where(criteriaBuilder.equal(from.get(columnHeader), columnValue));
 
       final TypedQuery<T> typed = entityManager.createQuery(criteriaQuery);
-      return typed.getResultStream().collect(Collectors.toList());
+      final List<T> l = typed.getResultStream().collect(Collectors.toList());
+      return l;
    }
 
    default Optional<T> findById(final ID id) {
       final EntityManager entityManager = getEntityManager();
-      return Optional.ofNullable(entityManager.find(getType(), id));
+      final Optional<T> o = Optional.ofNullable(entityManager.find(getType(), id));
+      return o;
    }
 
    EntityManager getEntityManager();
@@ -60,9 +61,10 @@ public interface AbstractJpaRepository<T, ID> {
    Class<T> getType();
 
    @Transactional
-   default T save(final T t) {
+   default T save(T t) {
       final EntityManager entityManager = getEntityManager();
-      return entityManager.merge(t);
+      t = entityManager.merge(t);
+      return t;
    }
 
 }

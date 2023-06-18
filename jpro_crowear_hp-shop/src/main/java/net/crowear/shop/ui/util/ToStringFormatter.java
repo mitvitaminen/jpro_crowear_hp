@@ -1,4 +1,4 @@
-package net.crowear.shop.ui.util;
+package net.chrisrocholl.homepage.ui.util;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;

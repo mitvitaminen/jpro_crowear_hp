@@ -1,4 +1,4 @@
-package net.crowear.shop.domain.model;
+package net.chrisrocholl.homepage.domain.model;
 
 import java.util.Set;
 
@@ -23,11 +23,11 @@ public class Permission extends WildcardPermission implements DbObject {
    @Id
    @GeneratedValue(strategy = GenerationType.AUTO)
    @Column(nullable = false, updatable = false)
-   private long id;
+   public long id;
    @Column(nullable = false, unique = true)
-   private String permission;
+   public String permission;
    @ManyToMany(mappedBy = "permissions")
-   private Set<Role> roles;
+   public Set<Role> roles;
 
    public Permission() {
    }
@@ -56,8 +56,7 @@ public class Permission extends WildcardPermission implements DbObject {
       if (o == this) {
          return true;
       }
-      if (o instanceof Permission) {
-         final Permission p = (Permission) o;
+      if (o instanceof final Permission p) {
          // only check permission, since permission should be unique across an entire
          // application:
          return getPermission() != null ? getPermission().equals(p.getPermission()) : p.getPermission() == null;

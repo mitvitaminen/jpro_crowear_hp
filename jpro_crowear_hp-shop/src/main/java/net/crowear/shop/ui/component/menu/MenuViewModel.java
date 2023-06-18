@@ -1,25 +1,23 @@
-package net.crowear.shop.ui.component.menu;
+package net.chrisrocholl.homepage.ui.component.menu;
 
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authz.annotation.RequiresRoles;
 
 import com.google.inject.Inject;
 
-import net.crowear.shop.domain.service.LocaleManagerService;
-import net.crowear.shop.ui.BaseViewModel;
-import net.crowear.shop.ui.dialog.login.LoginDialogView;
-import net.crowear.shop.ui.dialog.login.LoginDialogViewModel;
-import net.crowear.shop.ui.page.index.IndexPageView;
-import net.crowear.shop.ui.page.index.IndexPageViewModel;
-import net.crowear.shop.ui.page.memberarea.MemberAreaPageView;
-import net.crowear.shop.ui.page.memberarea.MemberAreaPageViewModel;
-import net.crowear.shop.ui.util.DialogHelper;
 import de.saxsys.mvvmfx.FluentViewLoader;
 import de.saxsys.mvvmfx.ViewTuple;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import net.chrisrocholl.homepage.domain.service.LocaleManagerService;
+import net.chrisrocholl.homepage.ui.BaseViewModel;
+import net.chrisrocholl.homepage.ui.dialog.login.LoginDialogView;
+import net.chrisrocholl.homepage.ui.dialog.login.LoginDialogViewModel;
+import net.chrisrocholl.homepage.ui.page.memberarea.MemberAreaPageView;
+import net.chrisrocholl.homepage.ui.page.memberarea.MemberAreaPageViewModel;
+import net.chrisrocholl.homepage.ui.util.DialogHelper;
 
 public class MenuViewModel extends BaseViewModel {
    private final SimpleBooleanProperty isAdminProperty = new SimpleBooleanProperty(false);
@@ -64,13 +62,6 @@ public class MenuViewModel extends BaseViewModel {
    }
 
    void loadHomepage() {
-      final ViewTuple<IndexPageView, IndexPageViewModel> viewTuple = FluentViewLoader.fxmlView(IndexPageView.class)
-            .load();
-
-      final Scene scene = new Scene(viewTuple.getView());
-      scene.getStylesheets().add("css-homepage.css");
-
-      primaryStage.setScene(scene);
    }
 
    void logout() {

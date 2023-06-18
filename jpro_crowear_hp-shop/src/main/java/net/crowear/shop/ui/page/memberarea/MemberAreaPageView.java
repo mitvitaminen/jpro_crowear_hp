@@ -1,12 +1,19 @@
-package net.crowear.shop.ui.page.memberarea;
+package net.chrisrocholl.homepage.ui.page.memberarea;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import net.crowear.shop.ui.page.Page;
+import jakarta.inject.Inject;
 import javafx.fxml.Initializable;
+import javafx.stage.Stage;
+import net.chrisrocholl.homepage.ui.page.Page;
 
 public class MemberAreaPageView extends Page<MemberAreaPageViewModel> implements Initializable {
+
+   @Inject
+   public MemberAreaPageView(Stage primaryStage) {
+      super(primaryStage);
+   }
 
    @Override
    public String description() {

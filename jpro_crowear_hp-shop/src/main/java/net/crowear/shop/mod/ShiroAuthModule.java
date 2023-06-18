@@ -1,4 +1,4 @@
-package net.crowear.shop.module;
+package net.chrisrocholl.homepage.mod;
 
 import javax.sql.DataSource;
 
@@ -10,7 +10,7 @@ import org.apache.shiro.realm.jdbc.JdbcRealm;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
 
-import net.crowear.shop.security.shiro.Argon2CredentialsMatcher;
+import net.chrisrocholl.homepage.security.shiro.Argon2CredentialsMatcher;
 
 public class ShiroAuthModule extends ShiroModule {
 

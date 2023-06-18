@@ -1,4 +1,4 @@
-package net.crowear.shop.domain.model;
+package net.chrisrocholl.homepage.domain.model;
 
 import java.time.LocalDateTime;
 
@@ -17,10 +17,10 @@ public class Message implements DbObject {
    @Id
    @GeneratedValue(strategy = GenerationType.AUTO)
    @Column(nullable = false, updatable = false)
-   private long id;
-   private LocalDateTime inDate;
-   private String message;
-   private String topic;
+   public long id;
+   public LocalDateTime inDate;
+   public String message;
+   public String topic;
 
    @Override
    public long getId() {

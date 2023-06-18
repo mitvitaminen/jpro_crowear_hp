@@ -1,10 +1,10 @@
-package net.crowear.shop.domain.service;
+package net.chrisrocholl.homepage.domain.service;
 
 import com.google.inject.Inject;
 
-import net.crowear.shop.domain.model.Message;
-import net.crowear.shop.domain.repository.AbstractJpaRepository;
-import net.crowear.shop.domain.repository.MessageRepository;
+import net.chrisrocholl.homepage.domain.model.Message;
+import net.chrisrocholl.homepage.domain.repository.AbstractJpaRepository;
+import net.chrisrocholl.homepage.domain.repository.MessageRepository;
 
 public class MessageServiceImpl implements AbstractJpaService<Message, Long> {
 

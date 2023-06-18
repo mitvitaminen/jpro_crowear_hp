@@ -1,4 +1,4 @@
-package net.crowear.shop.domain.model;
+package net.chrisrocholl.homepage.domain.model;
 
 import java.util.Set;
 
@@ -24,14 +24,14 @@ public class User implements DbObject {
    @Id
    @GeneratedValue(strategy = GenerationType.AUTO)
    @Column(nullable = false, updatable = false)
-   private long id;
+   public long id;
    @Column(nullable = false)
-   private String password;
+   public String password;
    @ManyToMany
    @JoinTable(name = "users_roles", joinColumns = @JoinColumn(name = "users_id"), inverseJoinColumns = @JoinColumn(name = "roles_id"))
-   private Set<Role> roles;
+   public Set<Role> roles;
    @Column(nullable = false, unique = true, updatable = false)
-   private String username;
+   public String username;
 
    public User() {
    }
@@ -55,8 +55,7 @@ public class User implements DbObject {
       if (o == this) {
          return true;
       }
-      if (o instanceof User) {
-         final User u = (User) o;
+      if (o instanceof User u) {
          // only check name, since role names should be unique across an entire
          // application:
          return getUsername() != null ? getUsername().equals(u.getUsername()) : u.getUsername() == null;

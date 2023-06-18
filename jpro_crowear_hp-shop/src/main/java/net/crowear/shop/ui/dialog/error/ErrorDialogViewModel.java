@@ -1,9 +1,9 @@
-package net.crowear.shop.ui.dialog.error;
+package net.chrisrocholl.homepage.ui.dialog.error;
 
 import com.google.inject.Inject;
 
-import net.crowear.shop.domain.service.LocaleManagerService;
-import net.crowear.shop.ui.component.dialog.DialogViewModel;
+import net.chrisrocholl.homepage.domain.service.LocaleManagerService;
+import net.chrisrocholl.homepage.ui.dialog.DialogViewModel;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 

@@ -1,8 +1,8 @@
-package net.crowear.shop.domain.service;
+package net.chrisrocholl.homepage.domain.service;
 
 import java.util.Optional;
 
-import net.crowear.shop.domain.model.User;
+import net.chrisrocholl.homepage.domain.model.User;
 
 public interface UserService extends AbstractJpaService<User, Long> {
 

@@ -1,24 +1,23 @@
-package net.crowear.shop.ui.component.content.admin;
+package net.chrisrocholl.homepage.ui.component.content.admin;
 
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authz.annotation.RequiresRoles;
 
 import com.google.inject.Inject;
 
-import net.crowear.shop.domain.service.LocaleManagerService;
-import net.crowear.shop.domain.service.TestdataService;
-import net.crowear.shop.ui.BaseViewModel;
-import net.crowear.shop.ui.dialog.about.AboutDialogView;
-import net.crowear.shop.ui.dialog.about.AboutDialogViewModel;
-import net.crowear.shop.ui.dialog.login.LoginDialogView;
-import net.crowear.shop.ui.dialog.login.LoginDialogViewModel;
-import net.crowear.shop.ui.page.memberarea.MemberAreaPageView;
-import net.crowear.shop.ui.page.memberarea.MemberAreaPageViewModel;
-import net.crowear.shop.ui.util.DialogHelper;
 import de.saxsys.mvvmfx.FluentViewLoader;
 import de.saxsys.mvvmfx.ViewTuple;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import net.chrisrocholl.homepage.domain.service.LocaleManagerService;
+import net.chrisrocholl.homepage.ui.BaseViewModel;
+import net.chrisrocholl.homepage.ui.dialog.about.AboutDialogView;
+import net.chrisrocholl.homepage.ui.dialog.about.AboutDialogViewModel;
+import net.chrisrocholl.homepage.ui.dialog.login.LoginDialogView;
+import net.chrisrocholl.homepage.ui.dialog.login.LoginDialogViewModel;
+import net.chrisrocholl.homepage.ui.page.memberarea.MemberAreaPageView;
+import net.chrisrocholl.homepage.ui.page.memberarea.MemberAreaPageViewModel;
+import net.chrisrocholl.homepage.ui.util.DialogHelper;
 
 public class AdminContentViewModel extends BaseViewModel {
 
@@ -26,10 +25,9 @@ public class AdminContentViewModel extends BaseViewModel {
 
    @Inject
    public AdminContentViewModel(LocaleManagerService lang, final Stage primaryStage,
-         final org.apache.shiro.mgt.SecurityManager securityManager, final TestdataService testDataService) {
+         final org.apache.shiro.mgt.SecurityManager securityManager) {
       super(lang);
       this.primaryStage = primaryStage;
-      testDataService.createData();
       SecurityUtils.setSecurityManager(securityManager);
    }
 
@@ -40,8 +38,8 @@ public class AdminContentViewModel extends BaseViewModel {
    }
 
    public void loadHomepage() {
-      final ViewTuple<AdminContentView, AdminContentViewModel> viewTuple = FluentViewLoader.fxmlView(AdminContentView.class)
-            .load();
+      final ViewTuple<AdminContentView, AdminContentViewModel> viewTuple = FluentViewLoader
+            .fxmlView(AdminContentView.class).load();
 
       final Scene scene = new Scene(viewTuple.getView());
       scene.getStylesheets().add("css-homepage.css");

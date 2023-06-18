@@ -1,9 +1,9 @@
-package net.crowear.shop.ui.component.banner;
+package net.chrisrocholl.homepage.ui.component.banner;
 
 import com.google.inject.Inject;
 
-import net.crowear.shop.domain.service.LocaleManagerService;
-import net.crowear.shop.ui.BaseViewModel;
+import net.chrisrocholl.homepage.domain.service.LocaleManagerService;
+import net.chrisrocholl.homepage.ui.BaseViewModel;
 
 public class BannerViewModel extends BaseViewModel {
 

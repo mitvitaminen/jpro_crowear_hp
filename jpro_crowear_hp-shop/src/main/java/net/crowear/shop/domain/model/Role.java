@@ -1,4 +1,4 @@
-package net.crowear.shop.domain.model;
+package net.chrisrocholl.homepage.domain.model;
 
 import java.util.Collection;
 import java.util.LinkedHashSet;
@@ -24,14 +24,14 @@ public class Role implements DbObject {
    @Id
    @GeneratedValue(strategy = GenerationType.AUTO)
    @Column(nullable = false, updatable = false)
-   private long id;
+   public long id;
    @ManyToMany
    @JoinTable(name = "roles_permissions", joinColumns = @JoinColumn(name = "roles_id"), inverseJoinColumns = @JoinColumn(name = "permissions_id"))
-   private Set<Permission> permissions;
+   public Set<Permission> permissions;
    @Column(nullable = false, unique = true)
-   private String rolename;
+   public String rolename;
    @ManyToMany(mappedBy = "roles")
-   private Set<User> users;
+   public Set<User> users;
 
    public Role() {
    }
@@ -73,8 +73,7 @@ public class Role implements DbObject {
       if (o == this) {
          return true;
       }
-      if (o instanceof Role) {
-         final Role r = (Role) o;
+      if (o instanceof Role r) {
          // only check name, since role names should be unique across an entire
          // application:
          return getRolename() != null ? getRolename().equals(r.getRolename()) : r.getRolename() == null;

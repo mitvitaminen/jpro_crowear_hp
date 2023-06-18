@@ -1,6 +1,8 @@
-package net.crowear.shop.domain.service;
+package net.chrisrocholl.homepage.domain.service;
 
+import java.net.URL;
 import java.time.LocalDateTime;
+import java.util.ResourceBundle;
 import java.util.Set;
 
 import org.apache.logging.log4j.LogManager;
@@ -12,13 +14,14 @@ import de.mkammerer.argon2.Argon2;
 import de.mkammerer.argon2.Argon2Factory;
 import de.mkammerer.argon2.Argon2Factory.Argon2Types;
 import javafx.collections.FXCollections;
-import net.crowear.shop.domain.model.Message;
-import net.crowear.shop.domain.model.Permission;
-import net.crowear.shop.domain.model.Role;
-import net.crowear.shop.domain.model.User;
-import net.crowear.shop.security.shiro.Argon2CredentialsMatcher;
+import javafx.fxml.Initializable;
+import net.chrisrocholl.homepage.domain.model.Message;
+import net.chrisrocholl.homepage.domain.model.Permission;
+import net.chrisrocholl.homepage.domain.model.Role;
+import net.chrisrocholl.homepage.domain.model.User;
+import net.chrisrocholl.homepage.security.shiro.Argon2CredentialsMatcher;
 
-public class TestdataServiceImpl implements TestdataService {
+public class TestdataServiceImpl implements TestdataService, Initializable {
 
    private final static Logger LOG = LogManager.getLogger(TestdataService.class);
 
@@ -44,6 +47,12 @@ public class TestdataServiceImpl implements TestdataService {
       createRoles();
       createUser();
       createMessages();
+
+   }
+
+   @Override
+   public void initialize(URL location, ResourceBundle resources) {
+      createData();
 
    }
 

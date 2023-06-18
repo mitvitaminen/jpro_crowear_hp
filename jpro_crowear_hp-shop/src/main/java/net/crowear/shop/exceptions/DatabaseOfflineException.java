@@ -1,4 +1,4 @@
-package net.crowear.shop.exceptions;
+package net.chrisrocholl.homepage.exceptions;
 
 public class DatabaseOfflineException extends Exception {
 

@@ -1,4 +1,4 @@
-package net.crowear.shop.ui.scope;
+package net.chrisrocholl.homepage.ui.scope;
 
 import java.util.List;
 

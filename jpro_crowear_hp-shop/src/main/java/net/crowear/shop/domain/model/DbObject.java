@@ -1,4 +1,4 @@
-package net.crowear.shop.domain.model;
+package net.chrisrocholl.homepage.domain.model;
 
 import java.io.Serializable;
 

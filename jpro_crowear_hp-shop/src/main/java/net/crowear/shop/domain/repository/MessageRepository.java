@@ -1,10 +1,10 @@
-package net.crowear.shop.domain.repository;
+package net.chrisrocholl.homepage.domain.repository;
 
 import com.google.inject.Inject;
 import com.google.inject.Provider;
 
-import net.crowear.shop.domain.model.Message;
 import jakarta.persistence.EntityManager;
+import net.chrisrocholl.homepage.domain.model.Message;
 
 public class MessageRepository implements AbstractJpaRepository<Message, Long> {
 

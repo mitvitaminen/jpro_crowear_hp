@@ -1,12 +1,12 @@
-package net.crowear.shop.domain.model;
+package net.chrisrocholl.homepage.domain.model;
 
 import java.math.BigDecimal;
 import java.util.List;
 
 public class ShoppingCart {
 
-   private BigDecimal discount;
-   private List<ShopItem> items;
+   public BigDecimal discount;
+   public List<ShopItem> items;
 
    public BigDecimal getDiscount() {
       return discount;

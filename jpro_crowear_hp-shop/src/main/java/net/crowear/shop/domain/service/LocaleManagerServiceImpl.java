@@ -1,8 +1,11 @@
-package net.crowear.shop.domain.service;
+package net.chrisrocholl.homepage.domain.service;
 
 import java.util.Enumeration;
 import java.util.Locale;
 import java.util.ResourceBundle;
+import java.util.spi.ResourceBundleProvider;
+
+import com.google.inject.Inject;
 
 import javafx.beans.property.MapProperty;
 import javafx.beans.property.SimpleMapProperty;
@@ -10,28 +13,32 @@ import javafx.collections.FXCollections;
 
 public class LocaleManagerServiceImpl extends SimpleMapProperty<String, Object> implements LocaleManagerService {
 
-   private final String bundleName = "clientresources";
+   private final static String BUNDLENAME = "clientresources";
+   private ResourceBundle bundle;
 
-   public LocaleManagerServiceImpl() {
+   private final ResourceBundleProvider bundleProvider;
+
+   @Inject
+   public LocaleManagerServiceImpl(ResourceBundleProvider bundleProvider) {
       super(FXCollections.observableHashMap());
-      reload();
+      this.bundleProvider = bundleProvider;
+      reload(Locale.GERMANY);
    }
 
    @Override
    public void changeLocale(final Locale newLocale) {
       Locale.setDefault(newLocale);
-      reload();
+      reload(newLocale);
    }
 
    @Override
    public String getString(final String key) {
-      final ResourceBundle bundle = ResourceBundle.getBundle(bundleName);
       return bundle.getString(key);
    }
 
    @SuppressWarnings("unchecked")
-   private void reload() {
-      final ResourceBundle bundle = ResourceBundle.getBundle(bundleName);
+   private void reload(Locale locale) {
+      bundle = bundleProvider.getBundle(BUNDLENAME, locale);
 
       final Enumeration<String> keys = bundle.getKeys();
       while (keys.hasMoreElements()) {

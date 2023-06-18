@@ -1,4 +1,4 @@
-package net.crowear.shop.ui.validation;
+package net.chrisrocholl.homepage.ui.validation;
 
 import de.saxsys.mvvmfx.utils.validation.FunctionBasedValidator;
 import de.saxsys.mvvmfx.utils.validation.Severity;
