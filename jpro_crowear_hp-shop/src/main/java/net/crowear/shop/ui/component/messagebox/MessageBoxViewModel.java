@@ -1,13 +1,13 @@
-package net.chrisrocholl.homepage.ui.component.messagebox;
+package net.crowear.shop.ui.component.messagebox;
 
 import java.util.List;
 
 import com.google.inject.Inject;
 
-import net.chrisrocholl.homepage.domain.model.Message;
-import net.chrisrocholl.homepage.domain.service.AbstractJpaService;
-import net.chrisrocholl.homepage.domain.service.LocaleManagerService;
-import net.chrisrocholl.homepage.ui.BaseViewModel;
+import net.crowear.shop.domain.model.Message;
+import net.crowear.shop.domain.service.AbstractJpaService;
+import net.crowear.shop.domain.service.LocaleManagerService;
+import net.crowear.shop.ui.BaseViewModel;
 
 public class MessageBoxViewModel extends BaseViewModel {
 

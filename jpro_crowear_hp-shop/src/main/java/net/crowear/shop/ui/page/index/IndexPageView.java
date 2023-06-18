@@ -1,4 +1,4 @@
-package net.chrisrocholl.homepage.ui.page.index;
+package net.crowear.shop.ui.page.index;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -7,7 +7,7 @@ import jakarta.inject.Inject;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.stage.Stage;
-import net.chrisrocholl.homepage.ui.page.Page;
+import net.crowear.shop.ui.page.Page;
 
 public class IndexPageView extends Page<IndexPageViewModel> implements Initializable {
 

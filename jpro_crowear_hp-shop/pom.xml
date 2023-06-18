@@ -7,7 +7,7 @@
 		<artifactId>jpro_crowear_hp</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>
-	<artifactId>jpro_crowear_hp-shop</artifactId>
+	<artifactId>crowear_hp-shop</artifactId>
 	<name>The actual shop</name>
 	<url>https://crowear.net</url>
 	<!-- PROPERTIES -->
@@ -175,7 +175,7 @@
 				<configuration>
 					<JVMArgs>						
 					</JVMArgs>
-					<mainClassName>net.chrisrocholl.homepage.Homepage</mainClassName>
+					<mainClassName>net.crowear.shop.Homepage</mainClassName>
 				</configuration>
 			</plugin>
 			<!-- -->
@@ -184,7 +184,7 @@
 				<artifactId>javafx-maven-plugin</artifactId>
 				<version>0.0.6</version>
 				<configuration>
-					<mainClass>net.chrisrocholl.homepage.Homepage</mainClass>
+					<mainClass>net.crowear.shop.Homepage</mainClass>
 				</configuration>
 			</plugin>
 			<plugin>

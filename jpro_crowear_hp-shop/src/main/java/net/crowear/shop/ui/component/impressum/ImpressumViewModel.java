@@ -1,9 +1,9 @@
-package net.chrisrocholl.homepage.ui.component.impressum;
+package net.crowear.shop.ui.component.impressum;
 
 import com.google.inject.Inject;
 
-import net.chrisrocholl.homepage.domain.service.LocaleManagerService;
-import net.chrisrocholl.homepage.ui.BaseViewModel;
+import net.crowear.shop.domain.service.LocaleManagerService;
+import net.crowear.shop.ui.BaseViewModel;
 
 public class ImpressumViewModel extends BaseViewModel {
 

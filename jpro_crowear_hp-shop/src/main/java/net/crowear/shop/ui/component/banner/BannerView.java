@@ -1,6 +1,6 @@
-package net.chrisrocholl.homepage.ui.component.banner;
+package net.crowear.shop.ui.component.banner;
 
-import net.chrisrocholl.homepage.ui.BaseView;
+import net.crowear.shop.ui.BaseView;
 import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;
 

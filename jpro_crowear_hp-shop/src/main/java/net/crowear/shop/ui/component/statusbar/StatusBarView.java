@@ -1,6 +1,6 @@
-package net.chrisrocholl.homepage.ui.component.statusbar;
+package net.crowear.shop.ui.component.statusbar;
 
-import net.chrisrocholl.homepage.ui.BaseView;
+import net.crowear.shop.ui.BaseView;
 
 public class StatusBarView extends BaseView<StatusBarViewModel> {
 

@@ -6,10 +6,10 @@
 	<persistence-unit name="myPersistenceUnit"
 		transaction-type="RESOURCE_LOCAL">
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-		<class>net.chrisrocholl.homepage.domain.model.Message</class>
-		<class>net.chrisrocholl.homepage.domain.model.Permission</class>
-		<class>net.chrisrocholl.homepage.domain.model.Role</class>
-		<class>net.chrisrocholl.homepage.domain.model.User</class>
+		<class>net.crowear.shop.domain.model.Message</class>
+		<class>net.crowear.shop.domain.model.Permission</class>
+		<class>net.crowear.shop.domain.model.Role</class>
+		<class>net.crowear.shop.domain.model.User</class>
 		
 		<properties>
 			<property name="eclipselink.logging.logger"

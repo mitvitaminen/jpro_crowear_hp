@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.VBox?>
 
 <VBox xmlns:fx="http://javafx.com/fxml"
-	fx:controller="net.chrisrocholl.homepage.ui.component.localeselector.LocaleSelectorView"
+	fx:controller="net.crowear.shop.ui.component.localeselector.LocaleSelectorView"
 	HBox.hgrow="ALWAYS">
 	<HBox alignment="CENTER_RIGHT">
 		<ImageView fitWidth="31" fitHeight="19" pickOnBounds="true"

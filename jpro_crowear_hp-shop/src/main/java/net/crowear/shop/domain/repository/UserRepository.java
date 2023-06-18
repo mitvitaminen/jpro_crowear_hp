@@ -1,10 +1,10 @@
-package net.chrisrocholl.homepage.domain.repository;
+package net.crowear.shop.domain.repository;
 
 import com.google.inject.Inject;
 import com.google.inject.Provider;
 
 import jakarta.persistence.EntityManager;
-import net.chrisrocholl.homepage.domain.model.User;
+import net.crowear.shop.domain.model.User;
 
 public class UserRepository implements AbstractJpaRepository<User, Long> {
 

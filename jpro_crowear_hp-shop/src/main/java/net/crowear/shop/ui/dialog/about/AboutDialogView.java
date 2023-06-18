@@ -1,10 +1,10 @@
-package net.chrisrocholl.homepage.ui.dialog.about;
+package net.crowear.shop.ui.dialog.about;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 import javafx.fxml.Initializable;
-import net.chrisrocholl.homepage.ui.dialog.DialogView;
+import net.crowear.shop.ui.dialog.DialogView;
 
 public class AboutDialogView extends DialogView<AboutDialogViewModel> implements Initializable {
 

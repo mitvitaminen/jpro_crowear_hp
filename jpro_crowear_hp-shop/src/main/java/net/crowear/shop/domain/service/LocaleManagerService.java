@@ -1,4 +1,4 @@
-package net.chrisrocholl.homepage.domain.service;
+package net.crowear.shop.domain.service;
 
 import java.util.Locale;
 

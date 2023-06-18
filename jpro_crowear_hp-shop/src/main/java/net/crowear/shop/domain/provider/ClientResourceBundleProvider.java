@@ -1,4 +1,4 @@
-package net.chrisrocholl.homepage.domain.provider;
+package net.crowear.shop.domain.provider;
 
 import java.util.Locale;
 import java.util.ResourceBundle;

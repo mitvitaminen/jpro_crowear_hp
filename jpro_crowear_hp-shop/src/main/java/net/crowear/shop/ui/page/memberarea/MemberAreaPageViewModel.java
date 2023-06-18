@@ -1,9 +1,9 @@
-package net.chrisrocholl.homepage.ui.page.memberarea;
+package net.crowear.shop.ui.page.memberarea;
 
 import com.google.inject.Inject;
 
-import net.chrisrocholl.homepage.domain.service.LocaleManagerService;
-import net.chrisrocholl.homepage.ui.BaseViewModel;
+import net.crowear.shop.domain.service.LocaleManagerService;
+import net.crowear.shop.ui.BaseViewModel;
 
 public class MemberAreaPageViewModel extends BaseViewModel {
 

@@ -1,4 +1,4 @@
-package net.chrisrocholl.homepage.domain.repository;
+package net.crowear.shop.domain.repository;
 
 import java.util.List;
 import java.util.Optional;

@@ -1,8 +1,8 @@
-package net.chrisrocholl.homepage.domain.service;
+package net.crowear.shop.domain.service;
 
 import java.util.Optional;
 
-import net.chrisrocholl.homepage.domain.repository.AbstractJpaRepository;
+import net.crowear.shop.domain.repository.AbstractJpaRepository;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 

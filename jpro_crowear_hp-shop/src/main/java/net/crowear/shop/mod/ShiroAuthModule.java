@@ -1,8 +1,8 @@
-package net.chrisrocholl.homepage.mod;
+package net.crowear.shop.mod;
 
 import javax.sql.DataSource;
 
-import org.apache.shiro.authc.credential.CredentialsMatcher;
+import org.apache.shiro.authc.credential.PasswordMatcher;
 import org.apache.shiro.guice.ShiroModule;
 import org.apache.shiro.realm.Realm;
 import org.apache.shiro.realm.jdbc.JdbcRealm;
@@ -10,23 +10,14 @@ import org.apache.shiro.realm.jdbc.JdbcRealm;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
 
-import net.chrisrocholl.homepage.security.shiro.Argon2CredentialsMatcher;
-
 public class ShiroAuthModule extends ShiroModule {
 
-   static class CredentialsMatcherProvider implements Provider<CredentialsMatcher> {
-      @Override
-      public CredentialsMatcher get() {
-         return new Argon2CredentialsMatcher();
-      }
-   }
-
    static class RealmProvider implements Provider<Realm> {
-      private final CredentialsMatcher credentialsMatcher;
+      private final PasswordMatcher credentialsMatcher;
       private final DataSource dataSource;
 
       @Inject
-      public RealmProvider(final DataSource dataSource, final CredentialsMatcher credentialsMatcher) {
+      public RealmProvider(final DataSource dataSource, final PasswordMatcher credentialsMatcher) {
          this.dataSource = dataSource;
          this.credentialsMatcher = credentialsMatcher;
       }
@@ -43,13 +34,13 @@ public class ShiroAuthModule extends ShiroModule {
          realm.setPermissionsLookupEnabled(true);
          realm.setCredentialsMatcher(credentialsMatcher);
          realm.setDataSource(dataSource);
+
          return realm;
       }
    }
 
    @Override
    public void configureShiro() {
-      bind(CredentialsMatcher.class).toProvider(CredentialsMatcherProvider.class).asEagerSingleton();
       bindRealm().toProvider(RealmProvider.class).asEagerSingleton();
    }
 

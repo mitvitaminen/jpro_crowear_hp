@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 
 <VBox xmlns:fx="http://javafx.com/fxml/1"
-	fx:controller="net.chrisrocholl.homepage.ui.dialog.about.AboutDialogView"
+	fx:controller="net.crowear.shop.ui.dialog.about.AboutDialogView"
 	styleClass="darkGreyBackground" spacing="10">
 	<fx:include source="../../component/banner/BannerView.fxml" />
 	<VBox>

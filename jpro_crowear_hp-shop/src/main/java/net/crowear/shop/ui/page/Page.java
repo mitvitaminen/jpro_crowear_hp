@@ -1,4 +1,4 @@
-package net.chrisrocholl.homepage.ui.page;
+package net.crowear.shop.ui.page;
 
 import com.jpro.webapi.WebAPI;
 
@@ -6,8 +6,8 @@ import de.saxsys.mvvmfx.FxmlView;
 import de.saxsys.mvvmfx.InjectViewModel;
 import javafx.scene.Node;
 import javafx.stage.Stage;
-import net.chrisrocholl.homepage.domain.service.LocaleManagerService;
-import net.chrisrocholl.homepage.ui.BaseViewModel;
+import net.crowear.shop.domain.service.LocaleManagerService;
+import net.crowear.shop.ui.BaseViewModel;
 import one.jpro.routing.View;
 
 public abstract class Page<T extends BaseViewModel> extends View implements FxmlView<T> {

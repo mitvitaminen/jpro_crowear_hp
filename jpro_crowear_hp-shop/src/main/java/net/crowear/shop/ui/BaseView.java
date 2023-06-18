@@ -1,8 +1,8 @@
-package net.chrisrocholl.homepage.ui;
+package net.crowear.shop.ui;
 
 import de.saxsys.mvvmfx.FxmlView;
 import de.saxsys.mvvmfx.InjectViewModel;
-import net.chrisrocholl.homepage.domain.service.LocaleManagerService;
+import net.crowear.shop.domain.service.LocaleManagerService;
 
 public abstract class BaseView<T extends BaseViewModel> implements FxmlView<T> {
 

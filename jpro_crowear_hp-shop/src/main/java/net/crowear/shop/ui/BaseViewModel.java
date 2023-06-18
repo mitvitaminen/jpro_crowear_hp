@@ -1,7 +1,7 @@
-package net.chrisrocholl.homepage.ui;
+package net.crowear.shop.ui;
 
 import de.saxsys.mvvmfx.ViewModel;
-import net.chrisrocholl.homepage.domain.service.LocaleManagerService;
+import net.crowear.shop.domain.service.LocaleManagerService;
 
 public abstract class BaseViewModel implements ViewModel {
 

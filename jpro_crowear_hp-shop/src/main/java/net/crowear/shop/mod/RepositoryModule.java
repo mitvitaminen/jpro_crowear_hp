@@ -1,11 +1,11 @@
-package net.chrisrocholl.homepage.mod;
+package net.crowear.shop.mod;
 
 import com.google.inject.Binder;
 
-import net.chrisrocholl.homepage.domain.repository.MessageRepository;
-import net.chrisrocholl.homepage.domain.repository.PermissionRepository;
-import net.chrisrocholl.homepage.domain.repository.RoleRepository;
-import net.chrisrocholl.homepage.domain.repository.UserRepository;
+import net.crowear.shop.domain.repository.MessageRepository;
+import net.crowear.shop.domain.repository.PermissionRepository;
+import net.crowear.shop.domain.repository.RoleRepository;
+import net.crowear.shop.domain.repository.UserRepository;
 
 public class RepositoryModule implements com.google.inject.Module {
    @Override

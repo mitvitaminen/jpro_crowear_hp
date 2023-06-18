@@ -1,4 +1,4 @@
-package net.chrisrocholl.homepage.domain.service;
+package net.crowear.shop.domain.service;
 
 import java.net.URL;
 import java.time.LocalDateTime;
@@ -7,6 +7,7 @@ import java.util.Set;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.apache.shiro.authc.credential.PasswordMatcher;
 
 import com.google.inject.Inject;
 
@@ -15,26 +16,27 @@ import de.mkammerer.argon2.Argon2Factory;
 import de.mkammerer.argon2.Argon2Factory.Argon2Types;
 import javafx.collections.FXCollections;
 import javafx.fxml.Initializable;
-import net.chrisrocholl.homepage.domain.model.Message;
-import net.chrisrocholl.homepage.domain.model.Permission;
-import net.chrisrocholl.homepage.domain.model.Role;
-import net.chrisrocholl.homepage.domain.model.User;
-import net.chrisrocholl.homepage.security.shiro.Argon2CredentialsMatcher;
+import net.crowear.shop.domain.model.Message;
+import net.crowear.shop.domain.model.Permission;
+import net.crowear.shop.domain.model.Role;
+import net.crowear.shop.domain.model.User;
 
 public class TestdataServiceImpl implements TestdataService, Initializable {
 
    private final static Logger LOG = LogManager.getLogger(TestdataService.class);
 
    private final AbstractJpaService<Message, Long> messageService;
+   private final PasswordMatcher passwordMatcher;
    private final AbstractJpaService<Permission, Long> permissionService;
    private final AbstractJpaService<Role, Long> roleService;
    private final UserService userService;
 
    @Inject
    public TestdataServiceImpl(final AbstractJpaService<Message, Long> messageService,
-         final AbstractJpaService<Permission, Long> permissionService, final AbstractJpaService<Role, Long> roleService,
-         final UserService userService) {
+         final PasswordMatcher passwordMatcher, final AbstractJpaService<Permission, Long> permissionService,
+         final AbstractJpaService<Role, Long> roleService, final UserService userService) {
       this.messageService = messageService;
+      this.passwordMatcher = passwordMatcher;
       this.permissionService = permissionService;
       this.roleService = roleService;
       this.userService = userService;
@@ -137,15 +139,13 @@ public class TestdataServiceImpl implements TestdataService, Initializable {
 
       final User user1 = new User();
       user1.setUsername("testUser1");
-      user1.setPassword(argon2.hash(Argon2CredentialsMatcher.ARGON2_ITERATIONS, Argon2CredentialsMatcher.ARGON2_MEMORY,
-            Argon2CredentialsMatcher.ARGON2_PARALLELISM, "testUser1".toCharArray()));
+      user1.setPassword(passwordMatcher.getPasswordService().encryptPassword("testUser1"));
       user1.setRoles(adminUserRoleList);
       userService.save(user1);
 
       final User user2 = new User();
       user2.setUsername("testUser2");
-      user2.setPassword(argon2.hash(Argon2CredentialsMatcher.ARGON2_ITERATIONS, Argon2CredentialsMatcher.ARGON2_MEMORY,
-            Argon2CredentialsMatcher.ARGON2_PARALLELISM, "testUser2".toCharArray()));
+      user1.setPassword(passwordMatcher.getPasswordService().encryptPassword("testUser2"));
       user2.setRoles(userRoleList);
       userService.save(user2);
    }

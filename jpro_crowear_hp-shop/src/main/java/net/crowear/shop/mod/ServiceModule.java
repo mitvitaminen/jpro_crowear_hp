@@ -1,21 +1,21 @@
-package net.chrisrocholl.homepage.mod;
+package net.crowear.shop.mod;
 
 import com.google.inject.AbstractModule;
 import com.google.inject.TypeLiteral;
 
-import net.chrisrocholl.homepage.domain.model.Message;
-import net.chrisrocholl.homepage.domain.model.Permission;
-import net.chrisrocholl.homepage.domain.model.Role;
-import net.chrisrocholl.homepage.domain.service.AbstractJpaService;
-import net.chrisrocholl.homepage.domain.service.LocaleManagerService;
-import net.chrisrocholl.homepage.domain.service.LocaleManagerServiceImpl;
-import net.chrisrocholl.homepage.domain.service.MessageServiceImpl;
-import net.chrisrocholl.homepage.domain.service.PermissionServiceImpl;
-import net.chrisrocholl.homepage.domain.service.RoleServiceImpl;
-import net.chrisrocholl.homepage.domain.service.TestdataService;
-import net.chrisrocholl.homepage.domain.service.TestdataServiceImpl;
-import net.chrisrocholl.homepage.domain.service.UserService;
-import net.chrisrocholl.homepage.domain.service.UserServiceImpl;
+import net.crowear.shop.domain.model.Message;
+import net.crowear.shop.domain.model.Permission;
+import net.crowear.shop.domain.model.Role;
+import net.crowear.shop.domain.service.AbstractJpaService;
+import net.crowear.shop.domain.service.LocaleManagerService;
+import net.crowear.shop.domain.service.LocaleManagerServiceImpl;
+import net.crowear.shop.domain.service.MessageServiceImpl;
+import net.crowear.shop.domain.service.PermissionServiceImpl;
+import net.crowear.shop.domain.service.RoleServiceImpl;
+import net.crowear.shop.domain.service.TestdataService;
+import net.crowear.shop.domain.service.TestdataServiceImpl;
+import net.crowear.shop.domain.service.UserService;
+import net.crowear.shop.domain.service.UserServiceImpl;
 
 public class ServiceModule extends AbstractModule {
 

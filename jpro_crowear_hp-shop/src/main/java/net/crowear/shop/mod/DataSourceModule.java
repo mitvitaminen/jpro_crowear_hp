@@ -1,4 +1,4 @@
-package net.chrisrocholl.homepage.mod;
+package net.crowear.shop.mod;
 
 import java.io.IOException;
 import java.io.InputStream;

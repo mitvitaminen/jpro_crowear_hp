@@ -1,4 +1,4 @@
-package net.chrisrocholl.homepage;
+package net.crowear.shop;
 
 public class Launcher {
 

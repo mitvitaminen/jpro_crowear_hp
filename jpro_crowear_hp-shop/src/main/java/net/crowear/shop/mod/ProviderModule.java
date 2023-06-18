@@ -1,10 +1,10 @@
-package net.chrisrocholl.homepage.mod;
+package net.crowear.shop.mod;
 
 import java.util.spi.ResourceBundleProvider;
 
 import com.google.inject.AbstractModule;
 
-import net.chrisrocholl.homepage.domain.provider.ClientResourceBundleProvider;
+import net.crowear.shop.domain.provider.ClientResourceBundleProvider;
 
 public class ProviderModule extends AbstractModule {
    @Override

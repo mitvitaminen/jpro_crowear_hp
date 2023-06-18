@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.VBox?>
 
 <HBox xmlns:fx="http://javafx.com/fxml/1"
-	fx:controller="net.chrisrocholl.homepage.ui.component.menu.MenuView"
+	fx:controller="net.crowear.shop.ui.component.menu.MenuView"
 	alignment="TOP_LEFT" styleClass="darkGreyBackground">
 	<GridPane>
 		<Button maxWidth="1.88E55555" styleClass="topLeftMenuButton"

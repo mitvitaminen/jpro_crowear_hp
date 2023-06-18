@@ -1,4 +1,4 @@
-package net.chrisrocholl.homepage.ui.scope;
+package net.crowear.shop.ui.scope;
 
 import de.saxsys.mvvmfx.Scope;
 import javafx.beans.property.ObjectProperty;

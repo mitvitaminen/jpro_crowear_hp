@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.HBox?>
 
 <HBox xmlns:fx="http://javafx.com/fxml/1"
-  fx:controller="net.chrisrocholl.homepage.ui.component.statusbar.StatusBarView"
+  fx:controller="net.crowear.shop.ui.component.statusbar.StatusBarView"
   styleClass="lightGreyBackground">
   <padding>
     <Insets bottom="5" left="5" right="5" top="5" />

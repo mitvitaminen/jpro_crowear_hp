@@ -1,4 +1,4 @@
-package net.chrisrocholl.homepage.ui.dialog.login;
+package net.crowear.shop.ui.dialog.login;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -8,7 +8,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import net.chrisrocholl.homepage.ui.dialog.DialogView;
+import net.crowear.shop.ui.dialog.DialogView;
 
 public class LoginDialogView extends DialogView<LoginDialogViewModel> implements Initializable {
 

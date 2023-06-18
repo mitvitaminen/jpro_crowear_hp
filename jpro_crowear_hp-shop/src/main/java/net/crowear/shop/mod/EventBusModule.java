@@ -1,4 +1,4 @@
-package net.chrisrocholl.homepage.mod;
+package net.crowear.shop.mod;
 
 import com.google.common.eventbus.EventBus;
 import com.google.inject.AbstractModule;
