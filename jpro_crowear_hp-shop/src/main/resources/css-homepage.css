@@ -135,11 +135,11 @@
 	font-size: 3.3em;
 	-fx-font-size: 3.3em;
 }
-.img-cannabisfeld{
-	-fx-image: url("./img/img-cannabisfeld.png")	
+.img-banner-background{
+	-fx-image: url("./img/img-banner-background.jpg");
 }
 .img-construction{
-	-fx-image: url("./img/img-construction.png")	
+	-fx-image: url("./img/img-construction.png");
 }
 .img-flag-de{
 	-fx-image: url("./img/img-flag-de.png")	

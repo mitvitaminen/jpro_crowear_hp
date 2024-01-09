@@ -10,9 +10,9 @@
 	fx:controller="net.crowear.shop.ui.component.banner.BannerView"
 	alignment="TOP_CENTER">
 	<StackPane styleClass="banner">
-		<ImageView fx:id="imgCannabisfeldImageView"
-			pickOnBounds="true" styleClass="img-cannabisfeld"
-			preserveRatio="true" />
-		<Label text="${controller.lang.label.potpurri}" />		
+		<ImageView fx:id="imgBackgoundImageView"
+			pickOnBounds="true" styleClass="img-banner-background"
+			preserveRatio="true" fitWidth = "1024" />
+		<Label text="${controller.lang.label.img.bannerbackground}" />		
 	</StackPane>
 </HBox>

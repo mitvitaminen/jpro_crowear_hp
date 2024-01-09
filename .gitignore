@@ -1,19 +1,9 @@
 
 .project
-.settings/org.eclipse.core.resources.prefs
-.settings/org.eclipse.m2e.core.prefs
+.settings
 jpro_crowear_hp-animations/.classpath
-jpro_crowear_hp-animations/.settings/org.eclipse.core.resources.prefs
-jpro_crowear_hp-animations/.settings/org.eclipse.jdt.core.prefs
-jpro_crowear_hp-animations/.settings/org.eclipse.m2e.core.prefs
+jpro_crowear_hp-animations/.settings
 jpro_crowear_hp-shop/.classpath
-jpro_crowear_hp-shop/.settings/org.eclipse.core.resources.prefs
-jpro_crowear_hp-shop/.settings/org.eclipse.jdt.core.prefs
-jpro_crowear_hp-shop/.settings/org.eclipse.m2e.core.prefs
 jpro_crowear_hp-shop/.settings/
-jpro_crowear_hp-shop/logs/jpro.activity.log
-jpro_crowear_hp-shop/logs/jpro.console.log
-jpro_crowear_hp-shop/logs/jpro.info.log
-jpro_crowear_hp-shop/logs/jpro.warn.log
-jpro_crowear_hp-shop/logs/jpro.error.log
+jpro_crowear_hp-shop/logs
 jpro_crowear_hp-shop/RUNNING_PID

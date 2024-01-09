@@ -13,13 +13,13 @@
 	<!-- PROPERTIES -->
 	<properties>
 		<argon2jvm.version>2.11</argon2jvm.version>
-		<controlsfx.version>11.1.2</controlsfx.version>
-		<eclipselink.version>4.0.1</eclipselink.version>
+		<controlsfx.version>11.2.0</controlsfx.version>
+		<eclipselink.version>4.0.2</eclipselink.version>
 		<fontawesome.version>4.7.0-9.1.2</fontawesome.version>
-		<h2.version>2.1.214</h2.version>
-		<jpro.version>2023.1.0</jpro.version>
+		<h2.version>2.2.224</h2.version>
+		<jpro.version>2023.3.2-M1</jpro.version>
 		<mvvmfx.version>1.9.0-SNAPSHOT</mvvmfx.version>
-		<shiro.version>2.0.0-alpha-2</shiro.version>
+		<shiro.version>1.13.0</shiro.version>
 	</properties>
 	<!-- DEPENDENCIES -->
 	<dependencies>
